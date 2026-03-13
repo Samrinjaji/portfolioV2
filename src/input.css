@@ -89,4 +89,7 @@
 .stat-box:hover { border-color: #e8633e; transform: translateY(-3px); }
 .stat-box:hover::after { transform: scaleX(1); }
 
+.skill-pill:hover { border-color: var(--color-ember); color: var(--color-ember); }
+
+
 
