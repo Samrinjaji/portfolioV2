@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initial Animations
+    // 1. Initial Hero Animations
     const brush = document.querySelector('.brush-stroke');
     if(brush) brush.classList.add('brush-stroke-active');
 
@@ -8,13 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => item.classList.add('reveal-visible'), 200 + (index * 100));
     });
 
-    // 2. Start Typing
+    // 2. Start Typing Effect
     type(); 
 
-    // 3. Stats Observer (Better than a flat setTimeout)
+    // 3. Stats Observer
+    // This handles the "0 to Target" count only when the user sees the stats
     const statsObserver = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            animateStats();
+            // Added a small delay so the animation starts after the fade-in finishes
+            setTimeout(animateStats, 500);
             statsObserver.disconnect();
         }
     }, { threshold: 0.5 });
@@ -24,47 +26,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- 1. Typing Effect Logic ---
-    const textElement = document.getElementById('typeText');
-    const phrases = ["Building Digital Experiences", "Frontend Developer", "UI/UX Specialist"];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+const textElement = document.getElementById('typeText');
+const phrases = ["Building Digital Experiences", "Frontend Developer", "UI/UX Specialist"];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-    function type() {
-        const currentPhrase = phrases[phraseIndex];
-        
-        if (isDeleting) {
-            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        let speed = isDeleting ? 50 : 100;
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            speed = 2000; // Pause at end
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            speed = 500;
-        }
-
-        setTimeout(type, speed);
+function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
     }
 
-    // --- 2. 3D Card Tilt Logic ---
-    const photoContainer = document.querySelector('.home-right');
-    const photoFrame = document.querySelector('.photo-frame');
+    let speed = isDeleting ? 50 : 100;
 
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        speed = 2000; // Pause at the end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        speed = 500;
+    }
+
+    setTimeout(type, speed);
+}
+
+// --- 2. 3D Card Tilt Logic ---
+const photoContainer = document.querySelector('.home-right');
+const photoFrame = document.querySelector('.photo-frame');
+
+if (photoContainer && photoFrame) {
     photoContainer.addEventListener('mousemove', (e) => {
         const rect = photoContainer.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        // Tweak numbers to increase/decrease tilt intensity
         photoFrame.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) scale3d(1.05, 1.05, 1.05)`;
     });
 
@@ -76,35 +78,30 @@ document.addEventListener('DOMContentLoaded', () => {
     photoContainer.addEventListener('mouseenter', () => {
         photoFrame.style.transition = "none";
     });
+}
 
-    // Initialize
-    window.onload = type;
+// --- 3. Stat Counting Logic ---
+function animateStats() {
+    const statsElements = document.querySelectorAll('.stat-number');
     
-    // Target the specific class we added to the <strong> tags
-    const stats = document.querySelectorAll('.stat-number');
+    statsElements.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        stat.innerText = "0+"; // Reset to zero immediately
+        
+        let count = 0;
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps calculation
 
-    function animateStats() {
-        stats.forEach(stat => {
-            // Read target from data attribute
-            const target = parseInt(stat.getAttribute('data-target'));
-            let count = 0;
-            const duration = 2000; 
-            const increment = target / (duration / 16); 
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                stat.innerText = Math.floor(count) + "+";
+                requestAnimationFrame(updateCount);
+            } else {
+                stat.innerText = target + "+";
+            }
+        };
 
-            const updateCount = () => {
-                count += increment;
-                if (count < target) {
-                    stat.innerText = Math.floor(count) + "+";
-                    requestAnimationFrame(updateCount);
-                } else {
-                    stat.innerText = target + "+";
-                }
-            };
-
-            updateCount();
-        });
-    }
-
-    // Keep your trigger as is
-    setTimeout(animateStats, 1400);
-    
+        updateCount();
+    });
+}
