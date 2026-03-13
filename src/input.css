@@ -77,6 +77,16 @@
 .scroll-arrow { font-size: 12px; animation: scrollBounce 1.6s ease infinite; }
 @keyframes scrollBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(4px);} }
 
+/* about */
+.stat-box::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: #e8633e;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s, background 0.45s;
+  border-radius: 2px;
+}
 
+.stat-box:hover { border-color: #e8633e; transform: translateY(-3px); }
+.stat-box:hover::after { transform: scaleX(1); }
 
 
