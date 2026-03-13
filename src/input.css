@@ -14,6 +14,7 @@
 
     /* Structure & Borders */
     --color-iron: #3d3b38;
+    --img-filter: grayscale(100%) brightness(0.8);
 
     /* Typography */
     --color-parchment: #ede8de;
@@ -23,6 +24,8 @@
     --color-crimson: #ad262d;
     --color-ember: #e8633e;
     --nav-bg: rgba(17,16,16,0.9);
+
+    
 }
 
 .nav-links a::after {

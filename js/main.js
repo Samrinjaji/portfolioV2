@@ -1,23 +1,26 @@
-const glow = document.getElementById('cursor-glow');
-window.addEventListener('mousemove', (e) => {
-    glow.style.opacity = "1";
-    glow.style.left = `${e.clientX}px`;
-    glow.style.top = `${e.clientY}px`;
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Reveal the brush stroke first
+    // 1. Initial Animations
     const brush = document.querySelector('.brush-stroke');
     if(brush) brush.classList.add('brush-stroke-active');
 
-    // 2. Reveal the rest of the content with a slight delay
     const itemsToReveal = document.querySelectorAll('.hero-label, .hero-name, .hero-sub, .hero-desc, .hero-actions, .hero-stats, .home-right');
-    
     itemsToReveal.forEach((item, index) => {
-        setTimeout(() => {
-            item.classList.add('reveal-visible');
-        }, 200 + (index * 100)); // Staggers the fade-in slightly
+        setTimeout(() => item.classList.add('reveal-visible'), 200 + (index * 100));
     });
+
+    // 2. Start Typing
+    type(); 
+
+    // 3. Stats Observer (Better than a flat setTimeout)
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateStats();
+            statsObserver.disconnect();
+        }
+    }, { threshold: 0.5 });
+    
+    const statsSection = document.querySelector('.hero-stats');
+    if (statsSection) statsObserver.observe(statsSection);
 });
 
 // --- 1. Typing Effect Logic ---
@@ -76,29 +79,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize
     window.onload = type;
+    
+    // Target the specific class we added to the <strong> tags
+    const stats = document.querySelectorAll('.stat-number');
 
-    const stats = document.querySelectorAll('.hero-stat strong');
+    function animateStats() {
+        stats.forEach(stat => {
+            // Read target from data attribute
+            const target = parseInt(stat.getAttribute('data-target'));
+            let count = 0;
+            const duration = 2000; 
+            const increment = target / (duration / 16); 
 
-function animateStats() {
-    stats.forEach(stat => {
-        const target = parseInt(stat.innerText);
-        let count = 0;
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60fps approx
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    stat.innerText = Math.floor(count) + "+";
+                    requestAnimationFrame(updateCount);
+                } else {
+                    stat.innerText = target + "+";
+                }
+            };
 
-        const updateCount = () => {
-            count += increment;
-            if (count < target) {
-                stat.innerText = Math.floor(count) + "+";
-                requestAnimationFrame(updateCount);
-            } else {
-                stat.innerText = target + "+";
-            }
-        };
+            updateCount();
+        });
+    }
 
-        updateCount();
-    });
-}
-
-// Trigger stats after the hero text has finished sliding up
-setTimeout(animateStats, 1400);
+    // Keep your trigger as is
+    setTimeout(animateStats, 1400);
+    
