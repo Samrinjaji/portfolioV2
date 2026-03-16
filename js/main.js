@@ -105,3 +105,20 @@ function animateStats() {
         updateCount();
     });
 }
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            // Optional: stop observing once it's revealed
+            // scrollObserver.unobserve(entry.target); 
+        }
+    });
+}, {
+    threshold: 0.15, // Trigger when 15% of the element is visible
+    rootMargin: "0px 0px -50px 0px" // Slight offset so it doesn't trigger too early
+});
+
+// Start observing all reveal elements
+document.querySelectorAll('.reveal').forEach(el => {
+    scrollObserver.observe(el);
+});

@@ -140,3 +140,35 @@ header .font-marker {
     background: rgba(255, 255, 255, 0.03);
     border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow */
 }
+
+/* animation.css */
+
+/* The initial state (hidden) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The active state (visible) */
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for grids (Bio vs Stats vs Skills) */
+.rd1 { transition-delay: 100ms; }
+.rd2 { transition-delay: 200ms; }
+.rd3 { transition-delay: 300ms; }
+.rd4 { transition-delay: 400ms; }
+
+/* Special hover for Skill Pills to make them feel interactive */
+.skill-pill {
+    transition: all 0.3s ease;
+}
+.skill-pill:hover {
+    transform: translateY(-2px);
+    background: var(--color-void-surface);
+    border-color: var(--color-ember);
+    color: var(--color-parchment);
+}
