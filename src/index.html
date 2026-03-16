@@ -153,40 +153,42 @@
                 </div>
             </div>
 
-            <!-- <div class="reveal rd4">
-                <div class="skills-label font-mono text-xs font-bold tracking-[0.3em] uppercase mb-3.5 text-ash mt-12">Gallery</div>
-                    <div class="gallery-grid">
-                        <div class="gallery-item wide" onclick="openLightbox('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=450&fit=crop')">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=300&fit=crop" alt="Working"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">At Work</span></div>
-
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop')">
-                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop" alt="Coding"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">Coding</span></div>
-
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=600&h=600&fit=crop')">
-                        <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=300&h=300&fit=crop" alt="Design"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">Design</span></div>
-
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop')">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=300&fit=crop" alt="Team"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">Team</span></div>
-
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=600&fit=crop')">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=300&fit=crop" alt="Setup"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">Setup</span></div>
-
-                        </div>
-                        <div class="gallery-item wide" onclick="openLightbox('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=450&fit=crop')">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop" alt="Office"/>
-                        <div class="gallery-overlay"><span class="gallery-tag">Office Life</span></div>
-                    </div>
+            <!-- GALLERY -->
+             <div class="reveal d3">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="gallery-label font-mono text-xs font-bold tracking-[0.3em] uppercase mb-3.5 text-ash">Gallery</div>
                 </div>
-            </div> -->
+             </div>
+
+            <!-- Top: featured + side stack -->
+            <div class="flex gap-3 h-85 mb-3">
+            <!-- Big featured -->
+            <div class="gal-main w-[54%] relative overflow-hidden rounded-md border border-white/10 cursor-pointer shrink-0">
+                <img class="gal-main-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=400&fit=crop" alt="At Work"/>
+                <div class="absolute inset-0 bg-linear-to-t from-black/75 to-transparent flex flex-col justify-end p-6">
+                <span class="font-mono text-[14px] font-bold tracking-[0.2em] uppercase text-ember mb-1">01 — Featured</span>
+                <span class="font-marker text-[24px] text-white leading-[1.1]">At Work</span>
+                <span class="font-mono text-[12px] text-white/50 mt-1">Behind the scenes</span>
+                </div>
+                <div class="absolute top-4 right-4 font-mono text-[11px] font-bold text-white/25">01</div>
+            </div>
+        
+            <!-- Side stack -->
+            <div class="flex-1 flex flex-col gap-3">
+                <div class="gal-side flex-1 relative overflow-hidden rounded-md border border-white/10 cursor-pointer">
+                <img class="gal-side-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=200&fit=crop" alt="Coding"/>
+                <div class="absolute inset-0 flex items-end p-4 bg-linear-to-t from-black/65 to-transparent">
+                    <div><div class="font-mono text-[12px] font-bold tracking-[0.2em] uppercase text-ember mb-0.5">02</div><div class="font-marker text-base text-parchment">Coding</div></div>
+                </div>
+                </div>
+                <div class="gal-side flex-1 relative overflow-hidden rounded-md border border-white/10 cursor-pointer" onclick="lb('https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=900&fit=crop')">
+                <img class="gal-side-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=500&h=200&fit=crop" alt="Design"/>
+                <div class="absolute inset-0 flex items-end p-4 bg-linear-to-t from-black/65 to-transparent">
+                    <div><div class="font-mono text-[12px] font-bold tracking-[0.2em] uppercase text-ember mb-0.5">03</div><div class="font-marker text-base text-parchment">Design</div></div>
+                </div>
+                </div>
+            </div>
+            </div>
 
         </section>
     </main>
