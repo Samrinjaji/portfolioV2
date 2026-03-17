@@ -6,15 +6,15 @@
     <meta name="description" content="Samrin Jaji - Frontend Developer Portfolio. I craft beautiful, intuitive web experiences.">
     <meta name="keywords" content="Frontend Developer, Web Design, JavaScript, Portfolio">
     <title>Samrin | Developer</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="./output.css" rel="stylesheet">
-    <link rel="stylesheet" href="./animation.css">
+    <link href="src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/animation.css">
 </head>
 <body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
     
@@ -38,11 +38,11 @@
             <!-- Right buttons -->
             <div class="flex items-center gap-3">
                <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-white/10 rounded-full flex items-center justify-center cursor-pointer text-base leading-none select-none transition-all hover:rotate-20 bg-white/4 shrink-0">
-                   <img src="../assets/icons/sun.svg" alt="light" class="block">
-                   <img src="../assets/icons/moon.svg" alt="dark" class="hidden">
+                   <img src="assets/icons/sun.svg" alt="light" class="block">
+                   <img src="assets/icons/moon.svg" alt="dark" class="hidden">
                </div>
                <button id="hamburgerBtn" class="md:hidden flex justify-center items-center w-9 h-9 border rounded-[3px] cursor-pointer gap-1.5">    
-                   <img src="../assets/icons/menu.svg" alt="menu-btn">
+                   <img src="assets/icons/menu.svg" alt="menu-btn">
                </button>
             </div>
 
@@ -99,7 +99,7 @@
                     <div class="photo-tape absolute -top-2 left-1/2 transform -translate-x-1/2 -rotate-[2.5deg] w-16 h-5 bg-white/10 rounded-sm z-20"></div>
 
                     <div class="photo-frame w-full aspect-3/4 border border-white/10 rounded overflow-hidden relative shadow-[6px_6px_0_rgba(255,255,255,0.1)] ">
-                        <img src="../assets/images/cat.jpg" alt="Samrin Jaji" class="w-full h-full object-cover"/>
+                        <img src="assets/images/cat.jpg" alt="Samrin Jaji" class="w-full h-full object-cover"/>
                     </div>
                     
                     <p class="photo-label mt-2.5 text-center font-mono text-xs tracking-[0.2em] uppercase text-ash">Samrin Jaji</p>
@@ -215,8 +215,133 @@
             </div>
 
         </section>
+
+        <!--  PROJECTS -->
+        <section id="projects" class="flex flex-col gap-8 py-25 px-20 bg-void-base">
+
+            <div class="reveal">
+                <div class="sec-tag font-mono text-[9px] font-bold tracking-[.32em] uppercase mb-2 text-ember">02 — Work</div>
+                <h2 class="sec-title font-marker leading-none inline-block text-parchment text-[clamp(38px,5.5vw,72px)]">Projects</h2>
+                <p class="projects-intro text-[14px] font-light text-parchment max-w-125 mt-2 leading-[1.7] transition-colors duration-450">A selection of my recent work — from sleek interfaces to full-stack applications. Click any card to learn more.</p>
+            </div>
+
+            <div class="projects-grid grid grid-cols-3 gap-4.5 mt-7" >
+
+                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'001',title:'Portfolio Site',desc:'A graffiti-inspired personal portfolio with brush stroke animations, notebook grid, dark/light mode toggle, and smooth scroll reveals. Built from scratch with zero frameworks — pure HTML, CSS, and vanilla JS for maximum performance.',img:'https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&h=506&fit=crop',tags:['HTML','CSS','Vanilla JS','GSAP','Scroll Reveal'],live:'#',code:'#'})">
+                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=338&fit=crop" alt="Portfolio" class="w-full h-full object-cover transition-[filter,transform] duration-300 grayscale-30 brightness-90" /></div>
+
+                    <div class="project-body p-5 flex-1 flex flex-col">
+                        <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">001</div>
+                        <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">Portfolio Site</div>
+                        <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A graffiti-inspired personal portfolio with brush stroke animations, notebook grid, and smooth scroll reveals.</div>
+
+                        <div class="project-footer flex items-center justify-between">
+                            <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">HTML</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">CSS</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">JS</span></div>
+                            <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'002',title:'E-Commerce UI',desc:'A modern shopping experience with fluid page transitions, animated cart interactions, micro-animations, and full Stripe payment integration. Designed for conversion and built for scale.',img:'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=506&fit=crop',tags:['Next.js','Tailwind','Stripe','Framer Motion','TypeScript'],live:'#',code:'#'})">
+                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=338&fit=crop" alt="E-Commerce" class="w-full h-full object-cover transition-[filter,transform] duration-300 grayscale-30 brightness-90" /></div>
+                    <div class="project-body p-5 flex-1 flex flex-col">
+                    <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">002</div>
+                    <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">E-Commerce UI</div>
+                    <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A modern shopping experience with fluid transitions, cart animations, and Stripe payment integration.</div>
+                    <div class="project-footer flex items-center justify-between">
+                        <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Next.js</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Tailwind</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Stripe</span></div>
+                        <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'003',title:'Dashboard App',desc:'A data-heavy analytics dashboard with real-time charts, dark mode toggle, and customizable widget layouts. Supports live data streaming via WebSockets, CSV export, and role-based access for team collaboration.',img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=506&fit=crop',tags:['Vue.js','D3.js','TypeScript','WebSocket','Node.js'],live:'#',code:'#'})">
+                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=338&fit=crop" alt="Dashboard"/></div>
+                    <div class="project-body p-5 flex-1 flex flex-col">
+                    <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">003</div>
+                    <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">Dashboard App</div>
+                    <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A data-heavy analytics dashboard with real-time charts, dark mode toggle, and customizable widget layouts.</div>
+                    <div class="project-footer flex items-center justify-between">
+                        <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Vue.js</span><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">D3.js</span><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">TypeScript</span></div>
+                        <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contact" class="p-25 px-20 flex flex-col gap-9 bg-void-surface border-b border-white/10 transition-colors duration-400">
+            <div class="reveal">
+
+                <div class="sec-tag font-mono text-[9px] font-bold tracking-[.32em] uppercase mb-2 text-ember">03 — Contact</div>
+                <h2 class="sec-title font-marker leading-none inline-block text-parchment text-[clamp(38px,5.5vw,72px)]">Let's Talk</h2>
+
+            </div>
+            
+            <div class="contact-grid reveal d1 grid grid-cols-[1fr_1.15fr] gap-16 mt-2">
+                 <div>
+
+                    <p class="text-base font-light leading-[1.95] text-ash mb-7 max-w-90">Have a project in mind or just want to say hello? I'd love to hear from you. Let's build something great together.</p>
+                    <div class="flex flex-col gap-2.75 mb-7">
+
+                        <a href="mailto:samrinjaji@email.com" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200">
+                            <div class="text-lg w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">&#x2709;</div>
+                            <span>samrinjaji@email.com</span>
+                            <a href="tel:5550121456" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">&#x2706;</div>555-012-1456</a>
+                            <a href="#" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">in</div>linkedin.com/in/samrinjaji</a>
+                            <a href="#" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">gh</div>github.com/samrinjaji</a>
+                        </a>
+
+                    </div>
+
+                    <div class="flex items-center gap-2.5">
+
+                        <div class="avail-dot"></div>
+                        <span class="font-mono text-[9px] font-bold tracking-[0.14em] uppercase text-[#3dba69]">Available for freelance work</span>
+
+                    </div>
+                 </div>
+
+                 <form class="bg-void-base border border-white/30 rounded-sm p-8.5 flex flex-col gap-4 transition-colors duration-400">
+                    
+                    <div class="font-marker text-[26px] mb-1">Send a Message</div>
+                    <div class="grid grid-cols-2 gap-3.5">
+                        <div><label>Name</label><input type="text" placeholder="Your name" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none"/></div>
+                        <div><label>Email</label><input type="email" placeholder="your@email.com" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none"/></div>
+                    </div>
+                     <div>
+                        <label>Subject</label>
+                        <select class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none">
+                        <option value="">Select a topic...</option>
+                        <option>Freelance Project</option>
+                        <option>Full-time Opportunity</option>
+                        <option>Collaboration</option>
+                        <option>Just saying hi!</option>
+                        </select>
+                     </div>
+                     <div><label>Message</label><textarea rows="4" placeholder="Tell me about your project..." required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none" style="resize:none"></textarea></div>
+                    <button id="submitBtn" type="submit" class="font-mono text-[12px] font-bold tracking-[0.18em] uppercase text-ash bg-parchment border-none px-7 py-3.25 rounded-xs cursor-pointer self-start transition duration-200 ease-in-out">Send Message &#x2192;</button>
+                 </form>
+
+            </div>
+        </section>
+        
     </main>
 
-    <script src="../js/main.js"></script>
+    <!-- FOOTER -->
+     <footer>
+        <div class="footer-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            samrinjaji@email.com
+        </div>
+        <div class="footer-logo">SJ<span>.</span></div>
+        <div class="footer-right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .91h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            555-012-1456
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
