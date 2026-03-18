@@ -26,6 +26,93 @@
 
 }
 
+/* Light Mode Theme */
+html[data-theme="light"] {
+  --color-void-base: #f5f3f0;
+  --color-void-elevated: #f0ede9;
+  --color-void-surface: #ede8de;
+  --border-soft: rgba(0,0,0,0.12);
+  --img-filter: grayscale(0%) brightness(1);
+  --color-parchment: #111010;
+  --color-ash: #2d2d2d;
+  --nav-bg: rgba(245, 243, 240, 0.95);
+}
+
+html[data-theme="light"] #home::before {
+  background: #f0ede9;
+}
+
+/* Theme icon colors: explicit per-theme and icon */
+/* Dark mode: show sun as white (invert if icons are dark) */
+html[data-theme="dark"] #themeBtn img[alt="light"] {
+  filter: invert(1);
+  opacity: 0.95;
+}
+html[data-theme="dark"] #themeBtn img[alt="dark"] {
+  filter: none;
+  opacity: 0.9;
+}
+
+/* Light mode: show moon as black / natural color */
+html[data-theme="light"] #themeBtn img[alt="dark"] {
+  filter: none;
+  opacity: 0.95;
+}
+html[data-theme="light"] #themeBtn img[alt="light"] {
+  filter: invert(0);
+  opacity: 0.9;
+}
+
+/* Light mode button and card styling */
+html[data-theme="light"] .project-card::before {
+  border-color: transparent #ede8de transparent transparent;
+}
+
+html[data-theme="light"] .hero-stat:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(232, 99, 62, 0.3);
+}
+
+/* Light mode project text visibility */
+html[data-theme="light"] .project-desc {
+  color: #3d3d3d;
+}
+
+html[data-theme="light"] .project-tag {
+  background: #d9d4ca;
+  color: #111010;
+}
+
+/* Light mode contact icons - remove invert */
+html[data-theme="light"] .contact-grid img {
+  filter: none !important;
+}
+
+/* Light mode footer visibility */
+html[data-theme="light"] .footer-logo {
+  color: #111010;
+}
+
+html[data-theme="light"] .footer-left img,
+html[data-theme="light"] .footer-right img {
+  filter: none;
+  opacity: 0.6;
+}
+
+/* Light mode header logo */
+html[data-theme="light"] nav > div:first-child {
+  color: #111010;
+}
+
+/* Ensure footer borders are visible in light mode */
+html[data-theme="light"] footer {
+  border-top-color: rgba(0,0,0,0.12) !important;
+}
+
+/* Override the inner footer divider (uses utility border-white/5) */
+html[data-theme="light"] footer .mt-10 {
+  border-top: 1px solid rgba(0,0,0,0.1) !important;
+}
 .nav-links a::after {
   content: '';
   position: absolute;

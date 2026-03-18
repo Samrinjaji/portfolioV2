@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Navigation Active State
     setupNavigation();
+
+    // 5. Theme Toggle
+    setupTheme();
 });
 
 // --- 1. Typing Effect Logic ---
@@ -163,4 +166,41 @@ function setupNavigation() {
     sections.forEach(section => {
         navObserver.observe(section);
     });
+}
+
+// --- 5. Theme Toggle Logic ---
+function setupTheme() {
+    const themeBtn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const sunIcon = themeBtn.querySelector('img[alt="light"]');
+    const moonIcon = themeBtn.querySelector('img[alt="dark"]');
+
+    // Get saved theme from localStorage or default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcons(savedTheme, sunIcon, moonIcon);
+
+    // Handle theme toggle
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcons(newTheme, sunIcon, moonIcon);
+    });
+}
+
+function updateThemeIcons(theme, sunIcon, moonIcon) {
+    if (theme === 'dark') {
+        sunIcon.classList.add('block');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        moonIcon.classList.remove('block');
+    } else {
+        sunIcon.classList.add('hidden');
+        sunIcon.classList.remove('block');
+        moonIcon.classList.add('block');
+        moonIcon.classList.remove('hidden');
+    }
 }
