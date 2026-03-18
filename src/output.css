@@ -654,6 +654,9 @@
   .bg-\(--nav-bg\) {
     background-color: var(--nav-bg);
   }
+  .bg-ash {
+    background-color: var(--color-ash);
+  }
   .bg-ember {
     background-color: var(--color-ember);
   }
