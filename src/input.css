@@ -84,8 +84,29 @@
   box-shadow: 0 10px 20px -10px rgba(232, 99, 62, 0.5);
 }
 
+.hero-stat {
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
 
+.hero-stat:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow */
+}
 
+/* about section */
+.sec-title::after{content:'';display:block;width:44px;height:3px;background:var(--color-ember);margin-top:14px;border-radius:2px}
+
+.stat-box::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: #e8633e;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s, background 0.45s;
+  border-radius: 2px;
+}
+
+.stat-box:hover { border-color: #e8633e; transform: translateY(-3px); }
+.stat-box:hover::after { transform: scaleX(1); }
+.skill-pill:hover { border-color: var(--color-ember); color: var(--color-ember); }
 /* 
 
 
@@ -163,4 +184,9 @@ footer {
 
 .avail-dot { width:8px; height:8px; border-radius:50%; background:#3dba69; box-shadow:0 0 0 3px rgba(61,186,105,0.18); flex-shrink:0; animation:pulse 2s infinite; }
 @keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(61,186,105,0.18);}50%{box-shadow:0 0 0 8px rgba(61,186,105,0.07);} }
+
+/* ── SECTION TITLE ── *
+.sec-label{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.sec-title{font-family:'Permanent Marker',cursive;font-size:clamp(38px,5.5vw,72px);color:var(--ink);line-height:1;display:inline-block;transition:color .4s}
+.sec-title::after{content:'';display:block;width:44px;height:3px;background:var(--accent);margin-top:14px;border-radius:2px}
  */ 
