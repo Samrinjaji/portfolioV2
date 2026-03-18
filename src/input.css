@@ -107,8 +107,24 @@
 .stat-box:hover { border-color: #e8633e; transform: translateY(-3px); }
 .stat-box:hover::after { transform: scaleX(1); }
 .skill-pill:hover { border-color: var(--color-ember); color: var(--color-ember); }
-/* 
 
+/* project sections */
+.project-card::before {
+  content: ''; position: absolute; top: 0; right: 0; z-index: 2;
+  border-style: solid; border-width: 0 26px 26px 0;
+  border-color: transparent var(--color-void-base) transparent transparent;
+  transition: border-color 0.45s;
+}
+
+.project-card:hover { transform: translateY(-6px); border-color: rgba(214,79,42,0.35); box-shadow: 0 16px 48px rgba(214,79,42,0.1); }
+.project-card:hover::after { opacity: 1; }
+
+.project-card:hover .project-thumb img { filter:grayscale(0%) brightness(0.95); transform:scale(1.06); }
+
+.project-link:hover { color:var(--color-ember); }
+
+.contact-link:hover{color:var(--color-ember)}
+.contact-link:hover .c-icon{background:var(--color-ember);border-color:var(--color-ember);color:#fff}
 
 
 
