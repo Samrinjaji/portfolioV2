@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const statsSection = document.querySelector('.hero-stats');
     if (statsSection) statsObserver.observe(statsSection);
+
+    // 4. Navigation Active State
+    setupNavigation();
 });
 
 // --- 1. Typing Effect Logic ---
@@ -105,6 +108,7 @@ function animateStats() {
         updateCount();
     });
 }
+
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -122,3 +126,41 @@ const scrollObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => {
     scrollObserver.observe(el);
 });
+
+// --- 4. Navigation Active State Logic ---
+function setupNavigation() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Handle nav link clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            link.classList.add('active');
+        });
+    });
+
+    // Handle scroll-based active state
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Find the corresponding nav link for this section and add active
+                const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    // Observe all sections
+    sections.forEach(section => {
+        navObserver.observe(section);
+    });
+}

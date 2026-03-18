@@ -243,139 +243,123 @@
                     </div>
                 </div>
             </div>
-        </section>    
-    </main>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
-        <!--  PROJECTS --
-        <section id="projects" class="flex flex-col gap-8 py-25 px-20 bg-void-base">
-
-            <div class="reveal">
-                <div class="sec-tag font-mono text-[9px] font-bold tracking-[.32em] uppercase mb-2 text-ember">02 — Work</div>
-                <h2 class="sec-title font-marker leading-none inline-block text-parchment text-[clamp(38px,5.5vw,72px)]">Projects</h2>
-                <p class="projects-intro text-[14px] font-light text-parchment max-w-125 mt-2 leading-[1.7] transition-colors duration-450">A selection of my recent work — from sleek interfaces to full-stack applications. Click any card to learn more.</p>
-            </div>
-
-            <div class="projects-grid grid grid-cols-3 gap-4.5 mt-7">
-
-                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'001',title:'Portfolio Site',desc:'A graffiti-inspired personal portfolio with brush stroke animations, notebook grid, dark/light mode toggle, and smooth scroll reveals. Built from scratch with zero frameworks — pure HTML, CSS, and vanilla JS for maximum performance.',img:'https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&h=506&fit=crop',tags:['HTML','CSS','Vanilla JS','GSAP','Scroll Reveal'],live:'#',code:'#'})">
-                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=338&fit=crop" alt="Portfolio" class="w-full h-full object-cover transition-[filter,transform] duration-300 grayscale-30 brightness-90" /></div>
-
-                    <div class="project-body p-5 flex-1 flex flex-col">
-                        <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">001</div>
-                        <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">Portfolio Site</div>
-                        <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A graffiti-inspired personal portfolio with brush stroke animations, notebook grid, and smooth scroll reveals.</div>
-
-                        <div class="project-footer flex items-center justify-between">
-                            <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">HTML</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">CSS</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">JS</span></div>
-                            <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'002',title:'E-Commerce UI',desc:'A modern shopping experience with fluid page transitions, animated cart interactions, micro-animations, and full Stripe payment integration. Designed for conversion and built for scale.',img:'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=506&fit=crop',tags:['Next.js','Tailwind','Stripe','Framer Motion','TypeScript'],live:'#',code:'#'})">
-                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=338&fit=crop" alt="E-Commerce" class="w-full h-full object-cover transition-[filter,transform] duration-300 grayscale-30 brightness-90" /></div>
-                    <div class="project-body p-5 flex-1 flex flex-col">
-                    <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">002</div>
-                    <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">E-Commerce UI</div>
-                    <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A modern shopping experience with fluid transitions, cart animations, and Stripe payment integration.</div>
-                    <div class="project-footer flex items-center justify-between">
-                        <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Next.js</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Tailwind</span><span class="project-tag font-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Stripe</span></div>
-                        <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="project-card bg-void-surface border border-white/10 rounded-sm overflow-hidden relative flex flex-col cursor-pointer transition-[transform,border-color,box-shadow,background] duration-[250ms,250ms,250ms,450ms]" onclick="openModal({num:'003',title:'Dashboard App',desc:'A data-heavy analytics dashboard with real-time charts, dark mode toggle, and customizable widget layouts. Supports live data streaming via WebSockets, CSV export, and role-based access for team collaboration.',img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=506&fit=crop',tags:['Vue.js','D3.js','TypeScript','WebSocket','Node.js'],live:'#',code:'#'})">
-                    <div class="project-thumb w-full aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=338&fit=crop" alt="Dashboard"/></div>
-                    <div class="project-body p-5 flex-1 flex flex-col">
-                    <div class="project-num font-mono text-[10px] font-bold tracking-[0.22em] text-ember mb-1.5 transition-colors duration-450">003</div>
-                    <div class="project-name font-marker text-[20px] mb-2 transition-colors duration-450">Dashboard App</div>
-                    <div class="project-desc text-base font-light leading-[1.75] text-white/50 mb-3.5 flex-1 transition-colors duration-450">A data-heavy analytics dashboard with real-time charts, dark mode toggle, and customizable widget layouts.</div>
-                    <div class="project-footer flex items-center justify-between">
-                        <div class="project-tags flex flex-wrap gap-1.25"><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">Vue.js</span><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">D3.js</span><span class="project-tag ont-mono text-[12px] font-bold tracking-[0.08em] px-2.5 py-0.75 bg-void-elevated rounded-xs uppercase transition-colors duration-450">TypeScript</span></div>
-                        <span class="project-link font-mono text-[14px] font-bold no-underline tracking-[0.08em] transition-colors duration-200">View →</span>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
-        <section id="contact" class="p-25 px-20 flex flex-col gap-9 bg-void-surface border-b border-white/10 transition-colors duration-400">
-            <div class="reveal">
-
-                <div class="sec-tag font-mono text-[9px] font-bold tracking-[.32em] uppercase mb-2 text-ember">03 — Contact</div>
-                <h2 class="sec-title font-marker leading-none inline-block text-parchment text-[clamp(38px,5.5vw,72px)]">Let's Talk</h2>
-
+        <!-- contacts -->
+        <section id="contact" class="p-25 px-20 flex flex-col gap-9 bg-void-elevated border-b border-(--border-soft) transition-colors duration-400">
+            <div>
+                <div class="sec-tag font-mono text-[10px] font-bold tracking-[.32em] uppercase mb-2 text-ember">03 — Contact</div>
+                <h2 class="sec-title font-marker leading-none inline-block text-[clamp(38px,5.5vw,72px)]">Let's Talk</h2>
             </div>
-            
-            <div class="contact-grid reveal d1 grid grid-cols-[1fr_1.15fr] gap-16 mt-2">
-                 <div>
 
-                    <p class="text-base font-light leading-[1.95] text-ash mb-7 max-w-90">Have a project in mind or just want to say hello? I'd love to hear from you. Let's build something great together.</p>
-                    <div class="flex flex-col gap-2.75 mb-7">
+            <div class="contact-grid reveal d1 grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-16 mt-2">
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <p class="text-base font-light leading-[1.95] text-ash mb-10 max-w-md">
+                            Have a project in mind or just want to say hello? I'd love to hear from you. Let's build something great together.
+                        </p>
+                        
+                        <div class="flex flex-col gap-4 mb-10">
+                            <a href="mailto:samrinjaji@email.com" class="group flex items-center gap-4 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-300 hover:text-ember">
+                                <div class="w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center shrink-0 bg-void-surface transition-all duration-300 group-hover:border-ember group-hover:bg-void-elevated">
+                                    <img src="assets/icons/mail.svg" alt="" class="w-4 h-4 invert opacity-70 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+                                <span>samrinjaji@email.com</span>
+                            </a>
 
-                        <a href="mailto:samrinjaji@email.com" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200">
-                            <div class="text-lg w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">&#x2709;</div>
-                            <span>samrinjaji@email.com</span>
-                            <a href="tel:5550121456" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">&#x2706;</div>555-012-1456</a>
-                            <a href="#" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">in</div>linkedin.com/in/samrinjaji</a>
-                            <a href="#" class="contact-link flex items-center gap-3.5 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-200"><div class="c-icon w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center text-[14px] shrink-0 bg-void-surface transition-colors duration-200">gh</div>github.com/samrinjaji</a>
-                        </a>
+                            <a href="tel:5550121456" class="group flex items-center gap-4 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-30 hover:text-ember">
+                                <div class="w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center shrink-0 bg-void-surface transition-all duration-300 group-hover:border-ember group-hover:bg-void-elevated">
+                                    <img src="assets/icons/phone.svg" alt="" class="w-4 h-4 invert opacity-70 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+                                <span>994-002-9040</span>
+                            </a>
 
+                            <a href="#" class="group flex items-center gap-4 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-300  hover:text-ember">
+                                <div class="w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center shrink-0 bg-void-surface transition-all duration-300 group-hover:border-ember group-hover:bg-void-elevated">
+                                    <img src="assets/icons/linkedin.svg" alt="" class="w-4 h-4 invert opacity-70 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+                                <span>linkedin.com/in/samrinjaji</span>
+                            </a>
+
+                            <a href="#" class="group flex items-center gap-4 font-dm text-[12px] font-bold tracking-[0.08em] uppercase no-underline transition-colors duration-300 hover:text-ember">
+                                <div class="w-9.5 h-9.5 border border-white/10 rounded-[3px] flex items-center justify-center shrink-0 bg-void-surface transition-all duration-300 group-hover:border-ember group-hover:bg-void-elevated">
+                                    <img src="assets/icons/github.svg" alt="" class="w-4 h-4 invert opacity-70 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+                                <span>github.com/samrinjaji</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="flex items-center gap-2.5">
-
-                        <div class="avail-dot"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#3dba69] animate-pulse"></div>
                         <span class="font-mono text-[9px] font-bold tracking-[0.14em] uppercase text-[#3dba69]">Available for freelance work</span>
-
                     </div>
-                 </div>
+                </div>
 
-                 <form class="bg-void-base border border-white/30 rounded-sm p-8.5 flex flex-col gap-4 transition-colors duration-400">
+                <form class="bg-void-base border border-white/10 rounded-sm p-8.5 flex flex-col gap-5 transition-colors duration-400 shadow-xl">
+                    <div class="font-marker text-[28px] mb-2">Send a Message</div>
                     
-                    <div class="font-marker text-[26px] mb-1">Send a Message</div>
-                    <div class="grid grid-cols-2 gap-3.5">
-                        <div><label>Name</label><input type="text" placeholder="Your name" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none"/></div>
-                        <div><label>Email</label><input type="email" placeholder="your@email.com" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none"/></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-mono text-[10px] uppercase tracking-wider text-ash/60">Name</label>
+                            <input type="text" placeholder="Your name" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-4 py-3 font-sans text-[14px] font-light outline-none focus:border-ember transition-colors duration-200"/>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-mono text-[10px] uppercase tracking-wider text-ash/60">Email</label>
+                            <input type="email" placeholder="your@email.com" required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-4 py-3 font-sans text-[14px] font-light outline-none focus:border-ember transition-colors duration-200"/>
+                        </div>
                     </div>
-                     <div>
-                        <label>Subject</label>
-                        <select class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none">
-                        <option value="">Select a topic...</option>
-                        <option>Freelance Project</option>
-                        <option>Full-time Opportunity</option>
-                        <option>Collaboration</option>
-                        <option>Just saying hi!</option>
-                        </select>
-                     </div>
-                     <div><label>Message</label><textarea rows="4" placeholder="Tell me about your project..." required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-3.5 py-2.5 font-sans text-[14px] font-light outline-none transition-colors duration-200 appearance-none" style="resize:none"></textarea></div>
-                    <button id="submitBtn" type="submit" class="font-mono text-[12px] font-bold tracking-[0.18em] uppercase text-ash bg-parchment border-none px-7 py-3.25 rounded-xs cursor-pointer self-start transition duration-200 ease-in-out">Send Message &#x2192;</button>
-                 </form>
 
+                    <div class="flex flex-col gap-2">
+                        <label class="font-mono text-[10px] uppercase tracking-wider text-ash/60">Subject</label>
+                        <select class="finput w-full bg-void-surface border border-white/10 rounded-xs px-4 py-3 font-sans text-[14px] font-light outline-none focus:border-ember transition-colors duration-200">
+                            <option value="">Select a topic...</option>
+                            <option>Freelance Project</option>
+                            <option>Full-time Opportunity</option>
+                            <option>Collaboration</option>
+                            <option>Just saying hi!</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label class="font-mono text-[10px] uppercase tracking-wider text-ash/60">Message</label>
+                        <textarea rows="4" placeholder="Tell me about your project..." required class="finput w-full bg-void-surface border border-white/10 rounded-xs px-4 py-3 font-sans text-[14px] font-light outline-none focus:border-ember transition-colors duration-200" style="resize:none"></textarea>
+                    </div>
+
+                    <button id="submitBtn" type="submit" class="mt-2 font-mono text-[12px] font-bold tracking-[0.18em] uppercase text-void-base bg-white border-none px-8 py-4 rounded-xs cursor-pointer self-start hover:bg-ember hover:text-white transition duration-300 ease-in-out">
+                        Send Message &#x2192;
+                    </button>
+                </form>
             </div>
         </section>
-        
     </main>
 
-    <!-- FOOTER --
-     <footer>
-        <div class="footer-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            samrinjaji@email.com
+    <footer class="bg-void-base border-t border-(--border-soft) py-12 px-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="footer-left flex items-center gap-3 font-mono text-[11px] tracking-widest text-ash uppercase order-2 md:order-1">
+            <img src="assets/icons/mail.svg" alt="" class="w-4 h-4 invert opacity-50">
+            <a href="mailto:samrinjaji@email.com" class="hover:text-ember transition-colors duration-300">samrinjaji@email.com</a>
         </div>
-        <div class="footer-logo">SJ<span>.</span></div>
-        <div class="footer-right">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .91h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            555-012-1456
+
+        <div class="footer-logo font-marker text-3xl text-white order-1 md:order-2">
+            SJ<span class="text-ember">.</span>
         </div>
-    </footer>
+
+        <div class="footer-right flex items-center gap-3 font-mono text-[11px] tracking-widest text-ash uppercase order-3">
+            <img src="assets/icons/phone.svg" alt="" class="w-4 h-4 invert opacity-50">
+            <a href="tel:994-002-9040" class="hover:text-ember transition-colors duration-300">994-002-9040</a>
+        </div>
+        
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-white/5 text-center">
+        <p class="font-mono text-[10px] tracking-[.2em] text-ash uppercase">
+            &copy; 2026 Samrin Jaji — All Rights Reserved
+        </p>
+    </div>
+</footer>
 
     <script src="js/main.js"></script>
 </body>
 </html>
- -->
