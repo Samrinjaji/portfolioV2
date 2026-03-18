@@ -19,32 +19,6 @@ header {
     animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.nav-links li {
-    opacity: 0; /* Hidden initially for staggered entrance */
-    animation: fadeInRight 0.5s ease forwards;
-}
-
-/* Staggered Delay for Nav Links */
-.nav-links li:nth-child(1) { animation-delay: 0.4s; }
-.nav-links li:nth-child(2) { animation-delay: 0.5s; }
-.nav-links li:nth-child(3) { animation-delay: 0.6s; }
-.nav-links li:nth-child(4) { animation-delay: 0.7s; }
-
-/* Logo and Action Buttons */
-header .font-marker {
-    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s backwards;
-}
-
-#themeBtn {
-    transition: all 0.3s ease;
-}
-
-#themeBtn:hover {
-    background-color: rgba(232, 99, 62, 0.15); /* Ember tint on hover */
-    border-color: #e8633e;
-    transform: rotate(15deg) scale(1.1);
-}
-
 /* Define the Heartbeat Pulse */
 @keyframes emberPulse {
     0% {
@@ -73,6 +47,22 @@ header .font-marker {
     filter: brightness(1.2);
     cursor: pointer;
 }
+
+/* Logo and Action Buttons */
+header .font-marker {
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s backwards;
+}
+
+.nav-links li {
+    opacity: 0; /* Hidden initially for staggered entrance */
+    animation: fadeInRight 0.5s ease forwards;
+}
+
+/* Staggered Delay for Nav Links */
+.nav-links li:nth-child(1) { animation-delay: 0.4s; }
+.nav-links li:nth-child(2) { animation-delay: 0.5s; }
+.nav-links li:nth-child(3) { animation-delay: 0.6s; }
+.nav-links li:nth-child(4) { animation-delay: 0.7s; }
 
 /* Ensure the brush is hidden initially */
 .brush-stroke {
@@ -108,15 +98,6 @@ header .font-marker {
     transform-style: preserve-3d;
 }
 
-.btn-primary, .btn-outline {
-    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px -10px rgba(232, 99, 62, 0.5);
-}
-
 .hero-stats {
     opacity: 0;
     transform: translateY(20px);
@@ -131,38 +112,48 @@ header .font-marker {
     }
 }
 
-/* Hover effect for the stat boxes */
+.scroll-arrow { font-size: 12px; animation: scrollBounce 1.6s ease infinite; }
+@keyframes scrollBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(4px);} }
+
+
+
+/* 
+
+
+
+
+/* Hover effect for the stat boxes *
 .hero-stat {
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .hero-stat:hover {
     background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow */
+    border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow *
 }
 
 /* animation.css */
 
-/* The initial state (hidden) */
+/* The initial state (hidden) *
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* The active state (visible) */
+/* The active state (visible) *
 .reveal-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Staggered delays for grids (Bio vs Stats vs Skills) */
+/* Staggered delays for grids (Bio vs Stats vs Skills) *
 .rd1 { transition-delay: 100ms; }
 .rd2 { transition-delay: 200ms; }
 .rd3 { transition-delay: 300ms; }
 .rd4 { transition-delay: 400ms; }
 
-/* Special hover for Skill Pills to make them feel interactive */
+/* Special hover for Skill Pills to make them feel interactive *
 .skill-pill {
     transition: all 0.3s ease;
 }
@@ -171,4 +162,4 @@ header .font-marker {
     background: var(--color-void-surface);
     border-color: var(--color-ember);
     color: var(--color-parchment);
-}
+} */

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Samrin Jaji - Frontend Developer Portfolio. I craft beautiful, intuitive web experiences.">
     <meta name="keywords" content="Frontend Developer, Web Design, JavaScript, Portfolio">
     <title>Samrin | Developer</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
@@ -17,38 +16,94 @@
     <link rel="stylesheet" href="src/animation.css">
 </head>
 <body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
-    
-    <header class="sticky top-0 z-50 bg-void-surface border-b border-white/10 backdrop-blur-xl px-10 h-15.5">
+    <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-20 h-15.5">
         <nav class="flex justify-between items-center h-full">
-
             <!-- Logo -->
-            <div class="font-marker text-2xl flex items-center gap-2">
+             <div class="font-marker text-2xl flex items-center gap-2">
                 <div class="w-2 h-2 rounded-full bg-ember shrink-0"></div>
                 SJ.
              </div>
 
-            <!-- Nav Links -->
-            <ul class="nav-links flex gap-9 items-center">
-              <li><a href="#home" data-section="home" class="active text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Home</a></li>
-              <li><a href="#about" data-section="about" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">About</a></li>
-              <li><a href="#projects" data-section="projects" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Projects</a></li>
-              <li><a href="#contact" data-section="contact" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Contact</a></li>
-            </ul>
+             <!-- Nav Links -->
+              <ul class="nav-links flex gap-9 items-center">
+                <li><a href="#home" class="active text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Home</a></li>
+                <li><a href="#about" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">About</a></li>
+                <li><a href="#projects" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Projects</a></li>
+                <li><a href="#contact" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Contact</a></li>
+              </ul>
 
-            <!-- Right buttons -->
-            <div class="flex items-center gap-3">
-               <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-white/10 rounded-full flex items-center justify-center cursor-pointer text-base leading-none select-none transition-all hover:rotate-20 bg-white/4 shrink-0">
-                   <img src="assets/icons/sun.svg" alt="light" class="block">
-                   <img src="assets/icons/moon.svg" alt="dark" class="hidden">
-               </div>
-               <button id="hamburgerBtn" class="md:hidden flex justify-center items-center w-9 h-9 border rounded-[3px] cursor-pointer gap-1.5">    
+             <!-- Right buttons -->
+              <div class="flex items-center gap-3">
+                <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer leading-none select-none transition-all hover:rotate-20 bg-(--border-soft) shrink-0">
+                    <img src="assets/icons/sun.svg" alt="light" class="block">
+                    <img src="assets/icons/moon.svg" alt="dark" class="hidden">
+                </div>
+                <button id="hamburgerBtn" class="md:hidden flex justify-center items-center w-9 h-9 border border-(--border-soft) rounded-xs gap-1.5 cursor-pointer">    
                    <img src="assets/icons/menu.svg" alt="menu-btn">
                </button>
-            </div>
-
+              </div>
         </nav>
     </header>
 
+    <main class="relative z-10">
+        <section id="home" class="relative overflow-hidden border-b border-(--border-soft) min-h-screen -mt-15.5 flex items-center justify-center py-16 px-6">
+            <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-20 lg:gap-32 px-4">
+                <div class="flex flex-col items-start gap-4 relative z-1">
+
+                    <div class="absolute font-marker text-[clamp(70px,14vw,160px)] text-(--border-soft) pointer-events-none select-none whitespace-nowrap top-1/2 -left-3 -translate-y-1/2 -z-10">PORTFOLIO</div>
+                    <div class="hero-label flex items-center gap-3 font-dm uppercase tracking-[0.22em] font-normal text-xs text-ash relative z-10">
+                        <span class="hero-label-line w-7 h-px bg-ember"></span>
+                        Frontend Developer
+                    </div>
+                    <div class="relative items-center inline-flex z-10">
+                        <div class="brush-stroke absolute -left-10 -right-10 h-[118%] bg-parchment origin-left rounded-sm z-0"></div>
+                        <h1 class="hero-name-wrap font-marker text-5xl md:text-7xl lg:text-7xl text-void-surface relative z-10 whitespace-nowrap tracking-tighter">SAMRIN JAJI</h1>
+                    </div>
+                    <p class="hero-sub font-dm text-sm font-normal text-ash relative z-10 min-h-6">
+                        <span id="typeText"></span>
+                        <span class="type-cursor inline-block w-0.5 h-4 bg-ember ml-0.5 align-middle rounded-sm"></span>
+                    </p>
+                    <p class="hero-desc text-ash font-light relative z-10 max-w-md">I craft beautiful, fast, and intuitive web experiences — turning complex ideas into clean interfaces people love to use.</p>
+                    <div class="hero-actions flex flex-wrap gap-3 relative z-10">
+                        <a href="#projects" class="btn-primary font-dm text-xs font-bold tracking-widest uppercase bg-parchment text-void-surface px-6 py-3 rounded-sm">View My Work</a>
+                        <a href="#contact" class="btn-outline font-dm text-xs font-bold tracking-widest uppercase bg-transparent border border-white/10 px-6 py-3 rounded-sm">Get In Touch</a>
+                    </div>
+                    <div class="hero-stats flex gap-0 relative z-10 border border-(--border-soft) overflow-hidden rounded bg-void-surface">
+                        <div class="hero-stat py-3.5 px-5 text-center border-r border-(--border-soft) last:border-r-0">
+                            <strong class="block font-marker text-2xl leading-none stat-number" data-target="3">0+</strong>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-ash">Years</span>
+                        </div>
+                        <div class="hero-stat py-3.5 px-5 text-center border-r border-(--border-soft) last:border-r-0">
+                            <strong class="block font-marker text-2xl leading-none stat-number" data-target="20">0+</strong>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-ash">Projects</span>
+                        </div>
+                        <div class="hero-stat py-3.5 px-5 text-center border-r border-(--border-soft) last:border-r-0">
+                            <strong class="block font-marker text-2xl leading-none stat-number" data-target="12">0+</strong>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-ash">Clients</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home-right relative z-10 shrink-0 w-60 lg:w-70">
+                    <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 -rotate-[2.5deg] w-16 h-5 bg-white/10 rounded-sm z-20"></div>
+                    <div class="photo-frame w-full aspect-3/4 border border-white/10 rounded overflow-hidden relative shadow-[6px_6px_0_rgba(255,255,255,0.1)]">
+                        <img src="assets/images/samrinjaji.jpeg" alt="Samrin Jaji" class="w-full h-full object-cover"/>
+                    </div>
+                    <p class="photo-label mt-2.5 text-center font-mono text-xs tracking-[0.2em] uppercase text-ash">Samrin Jaji</p>
+                </div>
+            </div>
+
+            <div class="scroll-hint absolute bottom-7 left-1/2 -translate-x-1/2 md:left-20 md:translate-x-0 flex items-center gap-2.5 font-mono text-[10px] tracking-[0.22em] uppercase">
+                <span class="scroll-arrow">↓</span>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+            <!-- 
     <main class="relative z-10">
         <section id="home" class="relative overflow-hidden border-b border-white/10 min-h-screen -mt-15.5 flex items-center justify-center py-16 px-6 md:px-12">
     
@@ -216,7 +271,7 @@
 
         </section>
 
-        <!--  PROJECTS -->
+        <!--  PROJECTS --
         <section id="projects" class="flex flex-col gap-8 py-25 px-20 bg-void-base">
 
             <div class="reveal">
@@ -329,7 +384,7 @@
         
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER --
      <footer>
         <div class="footer-left">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
@@ -345,3 +400,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+ -->
