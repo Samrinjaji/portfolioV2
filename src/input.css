@@ -143,6 +143,23 @@ html[data-theme="light"] footer .mt-10 {
 .btn-primary:hover { opacity: 0.78; }
 .btn-outline:hover { border-color: var(--border-soft); color: var(--color-ember); }
 
+/* Contact form submit button: Ember background, hover only changes opacity */
+#submitBtn {
+  background: var(--color-ember);
+  color: #ffffff;
+  border: none;
+  transition: opacity 180ms ease;
+}
+
+#submitBtn:hover {
+  opacity: 0.85;
+}
+
+#submitBtn:focus {
+  outline: 2px solid rgba(232,99,62,0.18);
+  outline-offset: 2px;
+}
+
 .photo-frame::before,.photo-frame::after {
   content:''; position:absolute; width:14px; height:14px;
   border-color:var(--corner); border-style:solid; z-index:3;

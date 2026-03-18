@@ -634,9 +634,6 @@
   .bg-void-surface {
     background-color: var(--color-void-surface);
   }
-  .bg-white {
-    background-color: var(--color-white);
-  }
   .bg-white\/10 {
     background-color: color-mix(in srgb, #fff 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -893,9 +890,6 @@
   .text-parchment {
     color: var(--color-parchment);
   }
-  .text-void-base {
-    color: var(--color-void-base);
-  }
   .text-void-surface {
     color: var(--color-void-surface);
   }
@@ -970,6 +964,11 @@
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-opacity {
+    transition-property: opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -1084,24 +1083,10 @@
       }
     }
   }
-  .hover\:bg-ember {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-ember);
-      }
-    }
-  }
   .hover\:text-ember {
     &:hover {
       @media (hover: hover) {
         color: var(--color-ember);
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
       }
     }
   }
@@ -1281,6 +1266,19 @@ html[data-theme="light"] footer .mt-10 {
 .btn-outline:hover {
   border-color: var(--border-soft);
   color: var(--color-ember);
+}
+#submitBtn {
+  background: var(--color-ember);
+  color: #ffffff;
+  border: none;
+  transition: opacity 180ms ease;
+}
+#submitBtn:hover {
+  opacity: 0.85;
+}
+#submitBtn:focus {
+  outline: 2px solid rgba(232,99,62,0.18);
+  outline-offset: 2px;
 }
 .photo-frame::before,.photo-frame::after {
   content: '';
