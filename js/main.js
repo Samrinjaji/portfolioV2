@@ -1,4 +1,54 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Elements
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  const desktopLinks = document.querySelectorAll('.nav-links a');
+
+  // Combine all links into one array for syncing
+  const allLinks = [...desktopLinks, ...mobileLinks];
+
+  // Toggle mobile menu
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Function to set active link for both desktop and mobile
+  function setActive(link) {
+    const targetHref = link.getAttribute('href');
+
+    allLinks.forEach(l => {
+      l.classList.remove('active', 'text-white');
+      l.classList.add('text-ash');
+
+      // Mobile ember line handling
+      const span = l.querySelector('span');
+      if(span) span.classList.replace('bg-ember','bg-transparent');
+
+      // Check if this link matches clicked href
+      if(l.getAttribute('href') === targetHref) {
+        l.classList.add('active', 'text-white');
+        if(span) span.classList.replace('bg-transparent','bg-ember');
+      }
+    });
+  }
+
+  // Add click listener to all links
+  allLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // optional: prevent default scrolling if you handle smooth scroll
+      setActive(link);
+
+      // Close mobile menu if a mobile link
+      if(link.closest('#mobileMenu')) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  });
+
+  // Set default active (Home) on load
+  setActive(document.querySelector('#mobileMenu a[href="#home"]'));
+
+/* document.addEventListener('DOMContentLoaded', () => {
     // 1. Initial Hero Animations
     const brush = document.querySelector('.brush-stroke');
     if(brush) brush.classList.add('brush-stroke-active');
@@ -23,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const statsSection = document.querySelector('.hero-stats');
     if (statsSection) statsObserver.observe(statsSection);
-
+    
     // 4. Navigation Active State
     setupNavigation();
 
@@ -203,4 +253,4 @@ function updateThemeIcons(theme, sunIcon, moonIcon) {
         moonIcon.classList.add('block');
         moonIcon.classList.remove('hidden');
     }
-}
+} */

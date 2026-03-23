@@ -26,7 +26,26 @@
 
 }
 
-/* Light Mode Theme */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e8633e;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 2px;
+}
+.nav-links a:hover { color: var(--color-parchment); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--color-parchment); font-weight: 600; }
+
+/*
+
+
+/* Light Mode Theme *
 html[data-theme="light"] {
   --color-void-base: #f5f3f0;
   --color-void-elevated: #f0ede9;
@@ -43,7 +62,7 @@ html[data-theme="light"] #home::before {
 }
 
 /* Theme icon colors: explicit per-theme and icon */
-/* Dark mode: show sun as white (invert if icons are dark) */
+/* Dark mode: show sun as white (invert if icons are dark) *
 html[data-theme="dark"] #themeBtn img[alt="light"] {
   filter: invert(1);
   opacity: 0.95;
@@ -53,7 +72,7 @@ html[data-theme="dark"] #themeBtn img[alt="dark"] {
   opacity: 0.9;
 }
 
-/* Light mode: show moon as black / natural color */
+/* Light mode: show moon as black / natural color *
 html[data-theme="light"] #themeBtn img[alt="dark"] {
   filter: none;
   opacity: 0.95;
@@ -63,7 +82,7 @@ html[data-theme="light"] #themeBtn img[alt="light"] {
   opacity: 0.9;
 }
 
-/* Light mode button and card styling */
+/* Light mode button and card styling *
 html[data-theme="light"] .project-card::before {
   border-color: transparent #ede8de transparent transparent;
 }
@@ -73,7 +92,7 @@ html[data-theme="light"] .hero-stat:hover {
   border-color: rgba(232, 99, 62, 0.3);
 }
 
-/* Light mode project text visibility */
+/* Light mode project text visibility *
 html[data-theme="light"] .project-desc {
   color: #3d3d3d;
 }
@@ -83,12 +102,12 @@ html[data-theme="light"] .project-tag {
   color: #111010;
 }
 
-/* Light mode contact icons - remove invert */
+/* Light mode contact icons - remove invert *
 html[data-theme="light"] .contact-grid img {
   filter: none !important;
 }
 
-/* Light mode footer visibility */
+/* Light mode footer visibility *
 html[data-theme="light"] .footer-logo {
   color: #111010;
 }
@@ -99,17 +118,17 @@ html[data-theme="light"] .footer-right img {
   opacity: 0.6;
 }
 
-/* Light mode header logo */
+/* Light mode header logo *
 html[data-theme="light"] nav > div:first-child {
   color: #111010;
 }
 
-/* Ensure footer borders are visible in light mode */
+/* Ensure footer borders are visible in light mode *
 html[data-theme="light"] footer {
   border-top-color: rgba(0,0,0,0.12) !important;
 }
 
-/* Override the inner footer divider (uses utility border-white/5) */
+/* Override the inner footer divider (uses utility border-white/5) *
 html[data-theme="light"] footer .mt-10 {
   border-top: 1px solid rgba(0,0,0,0.1) !important;
 }
@@ -129,7 +148,7 @@ html[data-theme="light"] footer .mt-10 {
 .nav-links a.active::after { width: 100%; }
 .nav-links a.active { color: var(--color-parchment); font-weight: 600; }
 
-/* Big diagonal accent strip  */
+/* Big diagonal accent strip  *
 #home::before {
   content: '';
   position: absolute; top: 0; right: 0;
@@ -143,7 +162,7 @@ html[data-theme="light"] footer .mt-10 {
 .btn-primary:hover { opacity: 0.78; }
 .btn-outline:hover { border-color: var(--border-soft); color: var(--color-ember); }
 
-/* Contact form submit button: Ember background, hover only changes opacity */
+/* Contact form submit button: Ember background, hover only changes opacity *
 #submitBtn {
   background: var(--color-ember);
   color: #ffffff;
@@ -194,10 +213,10 @@ html[data-theme="light"] footer .mt-10 {
 
 .hero-stat:hover {
     background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow */
+    border-color: rgba(173, 38, 45, 0.3); /* Subtle Ember glow *
 }
 
-/* about section */
+/* about section *
 .sec-title::after{content:'';display:block;width:44px;height:3px;background:var(--color-ember);margin-top:14px;border-radius:2px}
 
 .stat-box::after {
@@ -212,7 +231,7 @@ html[data-theme="light"] footer .mt-10 {
 .stat-box:hover::after { transform: scaleX(1); }
 .skill-pill:hover { border-color: var(--color-ember); color: var(--color-ember); }
 
-/* project sections */
+/* project sections *
 .project-card::before {
   content: ''; position: absolute; top: 0; right: 0; z-index: 2;
   border-style: solid; border-width: 0 26px 26px 0;
@@ -229,3 +248,6 @@ html[data-theme="light"] footer .mt-10 {
 
 .contact-link:hover{color:var(--color-ember)}
 .contact-link:hover .c-icon{background:var(--color-ember);border-color:var(--color-ember);color:#fff}
+
+
+ */

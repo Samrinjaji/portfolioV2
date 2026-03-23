@@ -1,4 +1,83 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Frontend Developer, Web Design, JavaScript, Portfolio">
+    <title>Samrin | Developer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/animation.css">
+</head>
+<body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
+    <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-4 h-15.5 md:px-20">
+        <nav class="flex justify-between items-center h-full relative">
+            <!-- logo -->
+             <div class="font-marker text-2xl flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-ember shrink-0"></div>
+                SJ.
+             </div>
+
+             <!-- nav links -->
+              <ul class="nav-links hidden md:flex gap-9 items-center">
+                <li><a href="#home" class="active text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Home</a></li>
+                <li><a href="#projects" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Projects</a></li>
+                <li><a href="#about" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">About</a></li>
+                <li><a href="#contact" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Contact</a></li>
+              </ul>
+
+              <!-- Hamburger (mobile only, right) -->
+               <button id="hamburgerBtn" class="md:hidden flex justify-center items-center w-9 h-9 rounded-md cursor-pointer">
+                <img src="assets/icons/menu.svg" alt="menu-btn" class="w-6 h-6">
+               </button>
+
+               <!-- Mobile Links (hidden by default) -->
+                <ul id="mobileMenu" class="flex flex-col md:hidden gap-4 absolute top-full right-0 w-48 p-4 bg-(--nav-bg) border border-(--border-soft) backdrop-blur-xl hidden shadow-md rounded-md mt-1.5">
+                    <li>
+                        <a href="#home" class="active relative py-2 px-4 text-xs font-medium tracking-widest uppercase text-white flex items-center justify-between hover:text-white">
+                        Home
+                        <span class="w-4 h-0.5 bg-ember inline-block"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="relative py-2 px-4 text-xs font-medium tracking-widest uppercase text-ash flex items-center justify-between hover:text-white">
+                        Projects
+                        <span class="w-4 h-0.5 bg-transparent inline-block"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="relative py-2 px-4 text-xs font-medium tracking-widest uppercase text-ash flex items-center justify-between hover:text-white">
+                        About
+                        <span class="w-4 h-0.5 bg-transparent inline-block"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="relative py-2 px-4 text-xs font-medium tracking-widest uppercase text-ash flex items-center justify-between hover:text-white">
+                        Contact
+                        <span class="w-4 h-0.5 bg-transparent inline-block"></span>
+                        </a>
+                    </li>
+                </ul>
+        </nav>
+    </header>
+
+    <!-- Floating Theme Button (desktop + mobile) -->
+     <div id="themeFloatingBtn" class="fixed bottom-6 right-6 w-10 h-10 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer bg-void-surface shadow-lg z-50 transition-all hover:scale-110">
+        <img src="assets/icons/sun.svg" alt="light" class="block w-5 h-5">
+        <img src="assets/icons/moon.svg" alt="dark" class="hidden w-5 h-5">
+     </div>
+
+    <script src="js/main.js"></script> 
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -18,13 +97,13 @@
 <body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
     <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-20 h-15.5">
         <nav class="flex justify-between items-center h-full">
-            <!-- Logo -->
+            <!-- Logo --
              <div class="font-marker text-2xl flex items-center gap-2">
                 <div class="w-2 h-2 rounded-full bg-ember shrink-0"></div>
                 SJ.
              </div>
 
-             <!-- Nav Links -->
+             <!-- Nav Links --
               <ul class="nav-links flex gap-9 items-center">
                 <li><a href="#home" class="active text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Home</a></li>
                 <li><a href="#about" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">About</a></li>
@@ -32,9 +111,9 @@
                 <li><a href="#contact" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Contact</a></li>
               </ul>
 
-             <!-- Right buttons -->
+             <!-- Right buttons --
               <div class="flex items-center gap-3">
-                <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer leading-none select-none transition-all hover:rotate-20 bg-(--border-soft) shrink-0">
+                <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer leading-none select-none transition-all hover:rotate-20 shrink-0">
                     <img src="assets/icons/sun.svg" alt="light" class="block">
                     <img src="assets/icons/moon.svg" alt="dark" class="hidden">
                 </div>
@@ -99,7 +178,7 @@
             </div>
         </section>
 
-        <!-- ABOUT -->
+        <!-- ABOUT --
         <section id="about" class="px-20 py-25 flex flex-col gap-12 bg-void-elevated">
             <div class="reveal">
                 <div class="font-mono text-[10px] font-bold tracking-[.32em] uppercase mb-2 text-ember">01 — About</div>
@@ -193,7 +272,7 @@
             </div>
         </section>
 
-        <!--  PROJECTS -->
+        <!--  PROJECTS --
         <section id="projects" class="flex flex-col gap-8 py-25 px-20 bg-void-base">
             <div class="reveal">
                 <div class="sec-tag font-mono text-[10px] font-bold tracking-[.32em] uppercase mb-2 text-ember">02 — Work</div>
@@ -245,7 +324,7 @@
             </div>
         </section>
 
-        <!-- contacts -->
+        <!-- contacts --
         <section id="contact" class="p-25 px-20 flex flex-col gap-9 bg-void-elevated border-b border-(--border-soft) transition-colors duration-400">
             <div>
                 <div class="sec-tag font-mono text-[10px] font-bold tracking-[.32em] uppercase mb-2 text-ember">03 — Contact</div>
@@ -362,4 +441,4 @@
 
     <script src="js/main.js"></script>
 </body>
-</html>
+</html> -->
