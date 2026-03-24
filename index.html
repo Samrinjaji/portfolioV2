@@ -67,62 +67,254 @@
         </nav>
     </header>
 
-    <!-- Floating Theme Button (desktop + mobile) -->
-     <div id="themeFloatingBtn" class="fixed bottom-6 right-6 w-10 h-10 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer bg-void-surface shadow-lg z-50 transition-all hover:scale-110">
-        <img src="assets/icons/sun.svg" alt="light" class="block w-5 h-5">
-        <img src="assets/icons/moon.svg" alt="dark" class="hidden w-5 h-5">
-     </div>
+    <main class="relative z-10">
+        <!-- Floating Theme Button (desktop + mobile)
+        <div id="themeFloatingBtn" class="fixed bottom-6 right-6 w-10 h-10 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer bg-void-surface shadow-lg z-50 transition-all hover:scale-110">
+            <img src="assets/icons/sun.svg" alt="light" class="block w-5 h-5">
+            <img src="assets/icons/moon.svg" alt="dark" class="hidden w-5 h-5">
+        </div>  -->
+
+        <section id="home" class="min-h-dvh flex flex-col items-center justify-center px-6 py-12 md:py-20 relative overflow-hidden bg-void">
+
+    <div class="text-7xl md:text-9xl lg:text-[14rem] font-marker text-ash/[0.03] absolute hidden md:block pointer-events-none z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none">
+        PORTFOLIO
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center md:justify-between gap-12 md:gap-32 lg:gap-48 xl:gap-64 w-full max-w-7xl z-10 px-6 md:px-16">
+    
+    <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:max-w-[45%] order-2 md:order-1">
+        
+        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-ash/80">
+            <span class="w-8 h-px bg-ember"></span>
+            Frontend Developer
+        </div>
+
+        <div class="relative inline-flex items-center group">
+            <div class="brush-stroke absolute -left-6 -right-8 h-[115%] bg-parchment origin-left rounded-sm z-0 transform -rotate-1 translate-y-1"></div>
+            <h1 class="font-bold font-marker text-4xl sm:text-5xl lg:text-7xl text-void-surface relative z-10 whitespace-nowrap tracking-tighter uppercase leading-none">
+                Samrin Jaji
+            </h1>
+        </div>
+
+        <div class="space-y-4">
+            <p class="text-base sm:text-lg lg:text-xl font-mono text-ash">
+                &gt; <span id="typeText"></span><span class="animate-pulse">_</span>
+            </p>
+            <p class="text-sm sm:text-base lg:text-lg text-ash/70 leading-relaxed">
+                I craft beautiful, fast, and intuitive web experiences — turning complex ideas into clean interfaces people love to use.
+            </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
+            <a href="#projects" class="bg-parchment text-void-surface px-10 py-4 rounded-sm font-dm text-xs font-bold tracking-widest uppercase text-center hover:bg-white transition-colors shadow-lg">
+                View My Work
+            </a>
+            <a href="#contact" class="border border-white/10 px-10 py-4 rounded-sm font-dm text-xs font-bold tracking-widest uppercase text-center hover:border-ember transition-colors">
+                Get In Touch
+            </a>
+        </div>
+
+        <div class="hero-stats flex w-full max-w-sm border border-white/5 rounded-sm overflow-hidden bg-void-surface/30 mt-8 backdrop-blur-sm">
+            <div class="flex-1 py-4 text-center border-r border-white/5">
+                <strong class="block font-marker text-2xl text-ember">3+</strong>
+                <span class="text-[10px] tracking-widest uppercase text-ash/40">Years</span>
+            </div>
+            <div class="flex-1 py-4 text-center border-r border-white/5">
+                <strong class="block font-marker text-2xl">20+</strong>
+                <span class="text-[10px] tracking-widest uppercase text-ash/40">Projects</span>
+            </div>
+            <div class="flex-1 py-4 text-center">
+                <strong class="block font-marker text-2xl">12+</strong>
+                <span class="text-[10px] tracking-widest uppercase text-ash/40">Clients</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative shrink-0 w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 order-1 md:order-2 group">
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 -rotate-[3deg] w-24 h-6 bg-white/10 rounded-sm z-20 backdrop-blur-sm"></div>
+
+    <div class="photo-frame w-full aspect-[3/4] border border-white/10 rounded-sm overflow-hidden relative shadow-[10px_10px_0_rgba(173,38,45,0.1)] md:shadow-[20px_20px_0_rgba(173,38,45,0.05)] transition-all duration-500 group-hover:scale-[1.02]">
+        
+        <div class="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-void/90 border border-white/10 z-30 shadow-2xl backdrop-blur-md">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="font-mono text-[9px] font-bold tracking-[0.2em] text-white/90 uppercase select-none">
+                Dev Status: Active
+            </span>
+        </div>
+
+        <div class="absolute top-3 left-3 w-1/4 h-1/5 border-t border-l border-white/20 z-10 pointer-events-none transition-all group-hover:top-4 group-hover:left-4"></div>
+        <div class="absolute bottom-3 right-3 w-1/4 h-1/5 border-b border-r border-white/20 z-10 pointer-events-none transition-all group-hover:bottom-4 group-hover:right-4"></div>
+
+        <span class="absolute top-5 left-5 w-4 h-4 border-t border-l border-ember/50 z-20"></span>
+        <span class="absolute bottom-5 right-5 w-4 h-4 border-b border-r border-ember/50 z-20"></span>
+
+        <img src="assets/images/samrinjaji.jpeg"
+            alt="Samrin Jaji"
+            class="w-full h-full object-cover grayscale contrast-110 transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"/>
+    </div>
+    
+    <p class="mt-6 text-center md:text-right font-mono text-[11px] tracking-[0.4em] uppercase text-ash/30">
+        System.Profile // 001
+    </p>
+</div>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-ash/30">
+        <span class="uppercase tracking-[0.4em] text-[9px]">Scroll</span>
+        <span class="animate-bounce">↓</span>
+    </div>
+
+</section>
+
+        <!-- <section id="home" class="min-h-dvh flex items-center px-6">
+  <div class="w-full flex flex-col items-center text-center gap-5">
+
+    <!-- LABEL --
+    <div class="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.22em] text-ash">
+      <span class="w-6 h-px bg-ember"></span>
+      Frontend Developer
+    </div>
+
+    <!-- IMAGE --
+    <div class="home-right relative z-10 shrink-0 w-44 sm:w-52 mx-auto cursor-pointer">
+
+      <!-- tape --
+      <div class="absolute -top-2 left-1/2 -translate-x-1/2 -rotate-[2.5deg] w-16 h-5 bg-white/10 rounded-sm z-20"></div>
+
+      <!-- frame --
+      <div class="photo-frame w-full aspect-[3/4] border border-white/10 rounded overflow-hidden relative shadow-[6px_6px_0_rgba(255,255,255,0.1)]">
+
+        <!-- corners --
+        <span class="absolute top-2 left-2 w-4 h-4 border-t border-l border-white/40"></span>
+        <span class="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-white/40"></span>
+
+        <!-- image --
+        <img src="assets/images/samrinjaji.jpeg"
+             alt="Samrin Jaji"
+             class="w-full h-full object-cover"/>
+      </div>
+
+      <!-- photo label --
+      <p class="photo-label mt-2.5 text-center font-mono text-xs tracking-[0.2em] uppercase text-ash">
+        Samrin Jaji
+      </p>
+    </div>
+
+    <!-- NAME (hidden on mobile) --
+    <h1 class="hidden md:block text-3xl font-bold">
+      SAMRIN JAJI
+    </h1>
+
+    <!-- DESCRIPTION --
+    <p class="text-sm text-ash max-w-sm">
+      I craft beautiful, fast, and intuitive web experiences — turning complex ideas into clean interfaces people love to use.
+    </p>
+
+    <!-- BUTTONS (SIDE BY SIDE) --
+    <div class="flex gap-3 justify-center w-full max-w-xs">
+      <a href="#projects" class="px-4 py-2 border border-(--border-soft)">
+        View My Work
+      </a>
+      <a href="#contact" class="px-4 py-2 bg-ember text-black">
+        Get In Touch
+      </a>
+    </div>
+
+    <!-- STATS --
+    <div class="flex justify-between w-full max-w-xs mt-4">
+      <div>
+        <strong>3+</strong>
+        <div class="text-xs text-ash">Years</div>
+      </div>
+      <div>
+        <strong>20+</strong>
+        <div class="text-xs text-ash">Projects</div>
+      </div>
+      <div>
+        <strong>12+</strong>
+        <div class="text-xs text-ash">Clients</div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+    </main>
+
+    <!-- <main class="relative z-10">
+        <!-- Floating Theme Button (desktop + mobile) --
+        <div id="themeFloatingBtn" class="fixed bottom-6 right-6 w-10 h-10 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer bg-void-surface shadow-lg z-50 transition-all hover:scale-110">
+            <img src="assets/icons/sun.svg" alt="light" class="block w-5 h-5">
+            <img src="assets/icons/moon.svg" alt="dark" class="hidden w-5 h-5">
+        </div>
+
+        <section id="home" class="relative overflow-hidden border-b border-(--border-soft) min-h-dvh flex items-center justify-center py-12 md:py-16 px-6 sm:px-8 md:px-12 lg:px-20">
+            <div class="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-16 md:gap-20 lg:gap-32"">
+                <div class="flex flex-col items-start gap-4 relative z-10">
+                    <div class="absolute font-marker text-[clamp(60px,12vw,140px)] text-(--border-soft) opacity-40 pointer-events-none select-none whitespace-nowrap top-1/2 left-0 -translate-y-1/2 hidden sm:block">PORTFOLIO</div>
+                    <div class="hero-label flex items-center gap-3 font-dm uppercase tracking-[0.22em] font-normal text-xs text-ash relative z-10 justify-center md:justify-start w-full md:w-auto">
+                        <span></span>
+                        Frontend Developer
+                    </div>
+
+                    <div>
+                        <div></div>
+                        <h1>SAMRIN JAJI</h1>
+                    </div>
+
+                    <p>
+                        <span id="typeText"></span>
+                        <span></span>
+                    </p>
+                    
+                    <p>I craft beautiful, fast, and intuitive web experiences — turning complex ideas into clean interfaces people love to use.</p>
+
+                    <div>
+                        <a href="#projects">View My Work</a>
+                        <a href="#contact">Get In Touch</a>
+                    </div>
+
+                    <div>
+                        <div>
+                            <strong data-target="3">0+</strong>
+                            <span>Years</span>
+                        </div>
+                        <div>
+                            <strong data-target="20">0+</strong>
+                            <span >Projects</span>
+                        </div>
+                        <div>
+                            <strong data-target="12">0+</strong>
+                            <span>Clients</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div>
+                    <div></div>
+                    <div>
+                        <img src="assets/images/samrinjaji.jpeg" alt="Samrin Jaji"/>
+                    </div>
+                    <p>Samrin Jaji</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="scroll-arrow">↓</span>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+    </main> -->
 
     <script src="js/main.js"></script> 
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Frontend Developer, Web Design, JavaScript, Portfolio">
-    <title>Samrin | Developer</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="src/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="src/animation.css">
-</head>
-<body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
-    <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-20 h-15.5">
-        <nav class="flex justify-between items-center h-full">
-            <!-- Logo --
-             <div class="font-marker text-2xl flex items-center gap-2">
-                <div class="w-2 h-2 rounded-full bg-ember shrink-0"></div>
-                SJ.
-             </div>
-
-             <!-- Nav Links --
-              <ul class="nav-links flex gap-9 items-center">
-                <li><a href="#home" class="active text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Home</a></li>
-                <li><a href="#about" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">About</a></li>
-                <li><a href="#projects" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Projects</a></li>
-                <li><a href="#contact" class="text-xs font-medium tracking-widest uppercase text-ash relative pb-1 transition-colors duration-200">Contact</a></li>
-              </ul>
-
-             <!-- Right buttons --
-              <div class="flex items-center gap-3">
-                <div id="themeBtn" title="Toggle theme" class="w-9 h-9 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer leading-none select-none transition-all hover:rotate-20 shrink-0">
-                    <img src="assets/icons/sun.svg" alt="light" class="block">
-                    <img src="assets/icons/moon.svg" alt="dark" class="hidden">
-                </div>
-                <button id="hamburgerBtn" class="md:hidden flex justify-center items-center w-9 h-9 border border-(--border-soft) rounded-xs gap-1.5 cursor-pointer">    
-                   <img src="assets/icons/menu.svg" alt="menu-btn">
-               </button>
-              </div>
-        </nav>
-    </header>
+<!--
 
     <main class="relative z-10">
         <section id="home" class="relative overflow-hidden border-b border-(--border-soft) min-h-screen -mt-15.5 flex items-center justify-center py-16 px-6">
