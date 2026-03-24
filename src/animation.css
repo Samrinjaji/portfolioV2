@@ -26,6 +26,15 @@
     filter: brightness(1.2);
     cursor: pointer;
 }
+
+.type-cursor {
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 /* /* 1. Define Keyframes *
 @keyframes slideDown {
     from { transform: translateY(-100%); opacity: 0; }
