@@ -161,6 +161,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* --- LIGHTBOX MODULE --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryItems = document.querySelectorAll('.cursor-zoom-in');
+
+    // Function to Open
+    const openLightbox = (src) => {
+        lightboxImg.src = src;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        
+        // Trigger opacity transition
+        setTimeout(() => {
+            lightbox.classList.add('opacity-100');
+        }, 10);
+        
+        document.body.style.overflow = 'hidden'; // Lock scroll
+    };
+
+    // Function to Close
+    const closeLightbox = () => {
+        lightbox.classList.remove('opacity-100');
+        setTimeout(() => {
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+        }, 300);
+        
+        document.body.style.overflow = ''; // Restore scroll
+    };
+
+    // Event Listeners for Gallery Items
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img) openLightbox(img.src);
+        });
+    });
+
+    // Close on Background Click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.closest('button')) {
+            closeLightbox();
+        }
+    });
+
+    // Close on Escape Key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+            closeLightbox();
+        }
+    });
+});
+
 
 /* document.addEventListener('DOMContentLoaded', () => {
     // 1. Initial Hero Animations
