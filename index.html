@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/animation.css">
 </head>
 <body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-4 h-15.5 md:px-20">
+    <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-4 h-15.5 md:px-20">
         <nav class="flex justify-between items-center h-full relative">
             <!-- logo -->
              <div class="font-marker text-2xl flex items-center gap-1.5">
@@ -68,6 +68,7 @@
     </header>
 
     <main class="relative z-10">
+        
         <!-- Floating Theme Button (desktop + mobile)
         <div id="themeFloatingBtn" class="fixed bottom-6 right-6 w-10 h-10 border border-(--border-soft) rounded-full flex items-center justify-center cursor-pointer bg-void-surface shadow-lg z-50 transition-all hover:scale-110">
             <img src="assets/icons/sun.svg" alt="light" class="block w-5 h-5">
@@ -166,223 +167,382 @@
         </section>
 
         <!--  PROJECTS -->
-        <section id="projects" class="min-h-dvh py-16 px-6 md:px-20 bg-void-elevated relative">
+        <section id="projects" class="min-h-dvh py-20 px-6 md:px-20 bg-void-elevated relative overflow-hidden flex flex-col justify-center">
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-ember/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-            <div class="mx-auto mb-12">
-                <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-ash mb-2">
-                    <span class="w-6 h-px bg-ember"></span>
-                    Inventory
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-ash mb-2">
+                        <span class="w-6 h-px bg-ember"></span>
+                        Inventory
+                    </div>
+
+                    <h2 class="font-marker text-3xl md:text-4xl text-parchment uppercase tracking-tighter">
+                        Featured <span class="text-ember">Projects</span>
+                    </h2>
+                    <p class="projects-intro text-sm md:text-base font-light text-ash max-w-xl mt-4 leading-relaxed">
+                        A selection of my recent work — from sleek interfaces to full-stack applications. 
+                        Each system is optimized for performance and high-impact UX.
+                    </p>
                 </div>
 
-                <h2 class="font-marker text-3xl md:text-4xl text-parchment uppercase tracking-tighter">
-                    Featured <span class="text-ember">Projects</span>
-                </h2>
-                <p class="projects-intro text-base font-light text-ash max-w-125 mt-2 leading-[1.7] transition-colors duration-450">A selection of my recent work — from sleek interfaces to full-stack applications. Click any card to learn more.</p>
-            </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                    
+                    <div class="project-tilt-container group relative" style="perspective: 1200px;">
+                        <div class="project-card transition-all duration-500 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col hover:border-ember/20" style="transform-style: preserve-3d;">
 
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-tilt-container group relative" style="perspective: 1000px;">
+                            <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
+                                <img src="assets/images/owwa.png" alt="Project Nexus" 
+                                class="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:brightness-100">
 
-                    <div class="project-card transition-transform duration-300 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col" style="transform-style: preserve-3d;">
-
-                        <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
-                            <img src="assets/images/owwa.png" alt="Project One" 
-                            class="w-full h-full object-cover grayscale brightness-75 transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
-
-                            <div class="absolute top-3 left-3 z-20" style="transform: translateZ(30px);">
-                                <span class="bg-ember/90 backdrop-blur-sm text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
-                                    Fullstack
-                                </span>
+                                <div class="absolute top-3 left-3 z-20" style="transform: translateZ(40px);">
+                                    <span class="bg-ember/90 backdrop-blur-md text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
+                                        Fullstack
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-5 flex-1 flex flex-col" style="transform: translateZ(20px);">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-marker text-lg text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
-                                <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
-                            </div>
-                            
-                            <p class="text-ash text-xs leading-relaxed mb-4 flex-1">
-                                High-speed analytics interface with real-time WebSocket integration.
-                            </p>
+                            <div class="p-6 flex-1 flex flex-col" style="transform: translateZ(20px);">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-marker text-xl text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
+                                    <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
+                                </div>
+                                
+                                <p class="text-ash/80 text-xs leading-relaxed mb-6 flex-1">
+                                    High-speed analytics interface with real-time WebSocket integration and custom visualization engine.
+                                </p>
 
-                            <div class="flex flex-wrap gap-2 mb-6" style="transform: translateZ(10px);">
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    React
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Tailwind v4
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Node.js
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Supabase
-                                </span>
-                            </div>
-                            
-                            <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                                <div class="flex gap-4">
-                                    <a href="#" class="group/icon relative">
-                                        <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 transition-opacity" alt="GitHub">
-                                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-void-surface border border-white/10 text-[8px] px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity pointer-events-none uppercase">Code</span>
+                                <div class="flex flex-wrap gap-2 mb-8" style="transform: translateZ(10px);">
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">React</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Tailwind v4</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Supabase</span>
+                                </div>
+                                
+                                <div class="flex justify-between items-center pt-5 border-t border-white/5">
+                                    <div class="flex gap-4">
+                                        <a href="#" class="group/icon relative flex items-center gap-2">
+                                            <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 group-hover/icon:scale-110 transition-all" alt="GitHub">
+                                            <span class="text-[9px] font-mono text-ash/40 uppercase group-hover/icon:text-parchment transition-colors">Source</span>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-all flex items-center gap-1">
+                                        Live // <span class="group-hover:translate-x-1 transition-transform">→</span>
                                     </a>
                                 </div>
-                                <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-colors">
-                                    Live //
-                                </a>
                             </div>
                         </div>
-                        
-
+                        <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/20 -z-10 group-hover:border-ember/40 transition-all duration-500 group-hover:-bottom-3 group-hover:-right-3 rounded-sm"></div>
                     </div>
-                    <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/30 -z-10 group-hover:border-ember/20 transition-all duration-300 group-hover:-bottom-3 group-hover:-right-3"></div>
 
-                </div>
+                    <div class="project-tilt-container group relative" style="perspective: 1200px;">
+                        <div class="project-card transition-all duration-500 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col hover:border-ember/20" style="transform-style: preserve-3d;">
 
-                <div class="project-tilt-container group relative" style="perspective: 1000px;">
+                            <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
+                                <img src="assets/images/owwa.png" alt="Project Nexus" 
+                                class="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:brightness-100">
 
-                    <div class="project-card transition-transform duration-300 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col" style="transform-style: preserve-3d;">
-
-                        <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
-                            <img src="assets/images/owwa.png" alt="Project One" 
-                            class="w-full h-full object-cover grayscale brightness-75 transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
-
-                            <div class="absolute top-3 left-3 z-20" style="transform: translateZ(30px);">
-                                <span class="bg-ember/90 backdrop-blur-sm text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
-                                    Fullstack
-                                </span>
+                                <div class="absolute top-3 left-3 z-20" style="transform: translateZ(40px);">
+                                    <span class="bg-ember/90 backdrop-blur-md text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
+                                        Fullstack
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-5 flex-1 flex flex-col" style="transform: translateZ(20px);">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-marker text-lg text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
-                                <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
-                            </div>
-                            
-                            <p class="text-ash text-xs leading-relaxed mb-4 flex-1">
-                                High-speed analytics interface with real-time WebSocket integration.
-                            </p>
+                            <div class="p-6 flex-1 flex flex-col" style="transform: translateZ(20px);">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-marker text-xl text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
+                                    <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
+                                </div>
+                                
+                                <p class="text-ash/80 text-xs leading-relaxed mb-6 flex-1">
+                                    High-speed analytics interface with real-time WebSocket integration and custom visualization engine.
+                                </p>
 
-                            <div class="flex flex-wrap gap-2 mb-6" style="transform: translateZ(10px);">
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    React
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Tailwind v4
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Node.js
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Supabase
-                                </span>
-                            </div>
-                            
-                            <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                                <div class="flex gap-4">
-                                    <a href="#" class="group/icon relative">
-                                        <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 transition-opacity" alt="GitHub">
-                                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-void-surface border border-white/10 text-[8px] px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity pointer-events-none uppercase">Code</span>
+                                <div class="flex flex-wrap gap-2 mb-8" style="transform: translateZ(10px);">
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">React</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Tailwind v4</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Supabase</span>
+                                </div>
+                                
+                                <div class="flex justify-between items-center pt-5 border-t border-white/5">
+                                    <div class="flex gap-4">
+                                        <a href="#" class="group/icon relative flex items-center gap-2">
+                                            <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 group-hover/icon:scale-110 transition-all" alt="GitHub">
+                                            <span class="text-[9px] font-mono text-ash/40 uppercase group-hover/icon:text-parchment transition-colors">Source</span>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-all flex items-center gap-1">
+                                        Live // <span class="group-hover:translate-x-1 transition-transform">→</span>
                                     </a>
                                 </div>
-                                <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-colors">
-                                    Live //
-                                </a>
                             </div>
                         </div>
-                        
-
+                        <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/20 -z-10 group-hover:border-ember/40 transition-all duration-500 group-hover:-bottom-3 group-hover:-right-3 rounded-sm"></div>
                     </div>
-                    <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/30 -z-10 group-hover:border-ember/20 transition-all duration-300 group-hover:-bottom-3 group-hover:-right-3"></div>
 
-                </div>
+                    <div class="project-tilt-container group relative" style="perspective: 1200px;">
+                        <div class="project-card transition-all duration-500 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col hover:border-ember/20" style="transform-style: preserve-3d;">
 
-                <div class="project-tilt-container group relative" style="perspective: 1000px;">
+                            <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
+                                <img src="assets/images/owwa.png" alt="Project Nexus" 
+                                class="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:brightness-100">
 
-                    <div class="project-card transition-transform duration-300 ease-out border border-white/5 bg-void-surface/40 rounded-sm overflow-hidden h-full flex flex-col" style="transform-style: preserve-3d;">
-
-                        <div class="relative aspect-16/10 overflow-hidden border-b border-white/5">
-                            <img src="assets/images/owwa.png" alt="Project One" 
-                            class="w-full h-full object-cover grayscale brightness-75 transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
-
-                            <div class="absolute top-3 left-3 z-20" style="transform: translateZ(30px);">
-                                <span class="bg-ember/90 backdrop-blur-sm text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
-                                    Fullstack
-                                </span>
+                                <div class="absolute top-3 left-3 z-20" style="transform: translateZ(40px);">
+                                    <span class="bg-ember/90 backdrop-blur-md text-void-base text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest rounded-sm">
+                                        Fullstack
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="p-5 flex-1 flex flex-col" style="transform: translateZ(20px);">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-marker text-lg text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
-                                <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
-                            </div>
-                            
-                            <p class="text-ash text-xs leading-relaxed mb-4 flex-1">
-                                High-speed analytics interface with real-time WebSocket integration.
-                            </p>
+                            <div class="p-6 flex-1 flex flex-col" style="transform: translateZ(20px);">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-marker text-xl text-parchment group-hover:text-ember transition-colors">Nexus Dashboard</h3>
+                                    <span class="font-mono text-[9px] text-ash/30 tracking-tighter">REV_2026</span>
+                                </div>
+                                
+                                <p class="text-ash/80 text-xs leading-relaxed mb-6 flex-1">
+                                    High-speed analytics interface with real-time WebSocket integration and custom visualization engine.
+                                </p>
 
-                            <div class="flex flex-wrap gap-2 mb-6" style="transform: translateZ(10px);">
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    React
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Tailwind v4
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Node.js
-                                </span>
-                                <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">
-                                    Supabase
-                                </span>
-                            </div>
-                            
-                            <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                                <div class="flex gap-4">
-                                    <a href="#" class="group/icon relative">
-                                        <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 transition-opacity" alt="GitHub">
-                                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-void-surface border border-white/10 text-[8px] px-2 py-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity pointer-events-none uppercase">Code</span>
+                                <div class="flex flex-wrap gap-2 mb-8" style="transform: translateZ(10px);">
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">React</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Tailwind v4</span>
+                                    <span class="text-[8px] font-mono py-1 px-2 border border-white/5 bg-white/5 text-ash/60 rounded-sm uppercase tracking-wider group-hover:border-ember/30 group-hover:text-parchment transition-all">Supabase</span>
+                                </div>
+                                
+                                <div class="flex justify-between items-center pt-5 border-t border-white/5">
+                                    <div class="flex gap-4">
+                                        <a href="#" class="group/icon relative flex items-center gap-2">
+                                            <img src="assets/icons/github.svg" class="w-4 h-4 opacity-40 group-hover/icon:opacity-100 group-hover/icon:scale-110 transition-all" alt="GitHub">
+                                            <span class="text-[9px] font-mono text-ash/40 uppercase group-hover/icon:text-parchment transition-colors">Source</span>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-all flex items-center gap-1">
+                                        Live // <span class="group-hover:translate-x-1 transition-transform">→</span>
                                     </a>
                                 </div>
-                                <a href="#" class="text-[9px] font-bold uppercase tracking-[0.2em] text-ash/60 hover:text-ember transition-colors">
-                                    Live //
-                                </a>
                             </div>
                         </div>
-                        
-
+                        <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/20 -z-10 group-hover:border-ember/40 transition-all duration-500 group-hover:-bottom-3 group-hover:-right-3 rounded-sm"></div>
                     </div>
-                    <div class="absolute -bottom-2 -right-2 w-full h-full border border-ember/30 -z-10 group-hover:border-ember/20 transition-all duration-300 group-hover:-bottom-3 group-hover:-right-3"></div>
 
                 </div>
             </div>
-
         </section>
 
-        <section id="about" class="min-h-dvh py-16 px-6 md:px-20 bg-void-base relative">
+        <!-- ABOUT -->
+         <section id="about" class="min-h-dvh py-16 px-6 md:px-20 bg-void-base relative flex flex-col justify-center">
             <div class="absolute top-0 right-0 w-96 h-96 bg-ember/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-            <div class="mx-auto mb-12">
+            <div class="max-w-7xl mx-auto w-full mb-12">
                 <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-ash mb-2">
                     <span class="w-6 h-px bg-ember"></span>
                     Identity
                 </div>
 
                 <h2 class="font-marker text-3xl md:text-4xl text-parchment uppercase tracking-tighter">
-                    abbout <span class="text-ember">sam.dev</span>
+                    About <span class="text-ember">sam.dev</span>
                 </h2>
             </div>
 
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start w-full">
+                <div class="space-y-8">
+                    <div class="space-y-4 text-ash leading-relaxed max-w-xl text-sm md:text-base font-light">
+                        <p>
+                            I am a <strong class="text-parchment font-medium">Frontend Developer & UI/UX Specialist</strong> passionate about building pixel-perfect, performant, and accessible web applications. I bridge the gap between design and engineering — making products that are both beautiful and functional.  
+                        </p>
+                        <p>
+                            When I'm not coding, I'm exploring new design trends, contributing to open source, and continuously sharpening my craft. 
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 border border-white/5 bg-void-surface/30 rounded-sm">
+                            <span class="block text-[9px] uppercase tracking-widest text-ash/40 mb-2">Current Focus</span>
+                            <span class="text-xs font-mono text-parchment tracking-tight">System Architecture & UX</span>
+                        </div>
+                        <div class="p-5 border border-white/5 bg-void-surface/30 rounded-sm">
+                            <span class="block text-[9px] uppercase tracking-widest text-ash/40 mb-2">OS Environment</span>
+                            <span class="text-xs font-mono text-parchment tracking-tight">Linux // Ubuntu // Fedora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="p-8 border border-white/5 bg-void-surface/20 backdrop-blur-sm rounded-sm relative">
+                        <div class="absolute top-0 right-0 p-4 font-mono text-[10px] text-ash uppercase tracking-[0.3em]">Module: Tech_Stack</div>
+                        <h3 class="font-marker text-xl text-parchment mb-8 flex items-center gap-3">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            Active Skills
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">01.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">html</span>
+                            </div>
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">02.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">Tailwind Css</span>
+                            </div>
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">03.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">JavaScript</span>
+                            </div>
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">04.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">UI/UX Design</span>
+                            </div>
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">05.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">Figma</span>
+                            </div>
+                            <div class="group/chip p-3 border border-white/5 bg-void-base/50 hover:border-ember/40 hover:bg-void-base transition-all duration-300 rounded-sm cursor-default">
+                                <span class="block text-[9px] font-mono text-ash/40 group-hover/chip:text-ember transition-colors">06.</span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-parchment">Canva</span>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-white/5 flex justify-between items-center">
+                            <span class="text-[9px] font-mono text-ash uppercase tracking-widest">Skill_Level: Optimized</span>
+                            <div class="flex gap-1.5">
+                                <div class="w-1 h-3 bg-ember"></div>
+                                <div class="w-1 h-3 bg-ember"></div>
+                                <div class="w-1 h-3 bg-ember"></div>
+                                <div class="w-1 h-3 bg-white/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <div class="max-w-7xl mx-auto mt-20 w-full">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-125">
+                    
+                    <div class="cursor-zoom-in group col-span-2 row-span-2 relative overflow-hidden rounded-sm border border-white/5 bg-void-surface group">
+                        <img src="assets/images/cat.jpg" alt="Gallery Image" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-ember/0 group-hover:border-ember/20 transition-colors pointer-events-none"></div>
+                    </div>
+
+                    <div class="cursor-zoom-in group row-span-2 relative overflow-hidden rounded-sm border border-white/5 bg-void-surface group">
+                        <img src="assets/images/cat.jpg" alt="Gallery Image" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-ember/0 group-hover:border-ember/20 transition-colors pointer-events-none"></div>
+                    </div>
+
+                    <div class="cursor-zoom-in group relative overflow-hidden rounded-sm border border-white/5 bg-void-surface group">
+                        <img src="assets/images/cat.jpg" alt="Gallery Image" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-ember/0 group-hover:border-ember/20 transition-colors pointer-events-none"></div>
+                    </div>
+
+                    <div class="cursor-zoom-in group relative overflow-hidden rounded-sm border border-white/5 bg-void-surface group">
+                        <img src="assets/images/cat.jpg" alt="Gallery Image" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute inset-0 border border-ember/0 group-hover:border-ember/20 transition-colors pointer-events-none"></div>
+                    </div>
+
+                </div>
+            </div>
         </section>
         
+        <section id="contact" class="min-h-dvh py-24 px-6 md:px-20 bg-void-elevated relative flex flex-col items-center justify-center text-center">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(173,38,45,0.02)_0%,transparent_70%)] pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto w-full relative z-10">
+                <div class="flex items-center justify-center gap-4 text-xs uppercase tracking-[0.4em] text-ash mb-12">
+                    <span class="w-8 h-px bg-ember"></span>
+                    Contact
+                    <span class="w-8 h-px bg-ember"></span>
+                </div>
+
+                <h2 class="font-marker text-3xl md:text-5xl text-parchment uppercase tracking-tighter leading-[0.9] mb-8">
+                    Let's Work <br> 
+                    <span class="text-ember">Together</span>
+                </h2>
+
+                <p class="text-ash text-sm md:text-base font-light max-w-md mx-auto leading-relaxed mb-16 tracking-wide">
+                    Have a project in mind? I'd love to hear about it. Drop me a message and let's build something amazing together.
+                </p>
+
+                <a href="mailto:hello@samrinjaji.dev" class="group relative inline-block mb-24">
+                    <span class="font-marker text-2xl md:text-4xl text-parchment uppercase tracking-tight transition-colors group-hover:text-ember">
+                        hello@samrinjaji.dev
+                    </span>
+                </a>
+
+                <div class="flex justify-center items-center gap-8 md:gap-12">
+                    
+                    <a href="https://github.com/Samrinjaji" target="_blank" class="group relative flex items-center justify-center w-12 h-12" title="GitHub">
+                        <div class="absolute inset-0 border border-dashed border-white/10 rounded-full group-hover:border-ember/50 group-hover:rotate-180 transition-all duration-700"></div>
+                        <img src="assets/icons/github.svg" alt="GitHub" class="w-6 h-6 opacity-40 group-hover:opacity-100 group-hover:scale-110 group-hover:brightness-125 transition-all duration-300 grayscale group-hover:grayscale-0 relative z-10">
+                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[8px] font-mono text-ember opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Source</span>
+                    </a>
+
+                    <a href="#" target="_blank" class="group relative flex items-center justify-center w-12 h-12" title="LinkedIn">
+                        <div class="absolute inset-0 border border-dashed border-white/10 rounded-full group-hover:border-ember/50 group-hover:rotate-180 transition-all duration-700"></div>
+                        <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-4 h-6 opacity-40 group-hover:opacity-100 group-hover:scale-110 group-hover:brightness-125 transition-all duration-300 grayscale group-hover:grayscale-0 relative z-10">
+                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[8px] font-mono text-ember opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Connect</span>
+                    </a>
+
+                    <a href="#" target="_blank" class="group relative flex items-center justify-center w-12 h-12" title="Discord">
+                        <div class="absolute inset-0 border border-dashed border-white/10 rounded-full group-hover:border-ember/50 group-hover:rotate-180 transition-all duration-700"></div>
+                        <img src="assets/icons/discord-brands-solid-full.svg" alt="Discord" class="invert w-6 h-6 opacity-40 group-hover:opacity-100 group-hover:scale-110 group-hover:brightness-125 transition-all duration-300 grayscale group-hover:grayscale-0 relative z-10">
+                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[8px] font-mono text-ember opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Discord</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
     </main>
+
+    <footer class="py-12 px-6 md:px-20 bg-void-base border-t border-white/5 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-ember/20 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center md:items-end gap-10 md:gap-0">
+            
+            <div class="flex flex-col items-center md:items-start order-1">
+                <div class="font-marker text-2xl flex items-center gap-2 text-parchment leading-none mb-3">
+                    <div class="w-1.5 h-1.5 rounded-full bg-ember shrink-0 shadow-[0_0_8px_rgba(173,38,45,0.4)]"></div>
+                    SJ.
+                </div>
+                <p class="font-mono text-[10px] tracking-[0.3em] text-ash/60 uppercase whitespace-nowrap">
+                    &copy; sam.dev // all rights reserved
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center order-2">
+                <span class="font-mono text-[10px] tracking-[0.5em] text-ash/60 uppercase mb-2">Signal</span>
+                <a href="tel:+639940029040" class="text-[11px] font-dm tracking-widest text-parchment hover:text-ember transition-colors leading-none whitespace-nowrap">
+                    +63 994 002 9040
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end order-3">
+                <a href="#home" class="group flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-ash/40 hover:text-parchment transition-colors mb-3 leading-none">
+                    Return_To_Top
+                    <span class="group-hover:-translate-y-1 transition-transform">↑</span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono text-ash/40 uppercase tracking-tighter">Remote_Ready // 2026</span>
+                    <span class="relative flex h-1.5 w-1.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-20"></span>
+                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500/50"></span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-100 bg-void-base/95 backdrop-blur-md hidden flex-col items-center justify-center p-4 md:p-20 transition-all duration-300 opacity-0">
+        <button class="absolute top-8 right-8 text-ash hover:text-ember transition-colors group">
+            <span class="font-mono text-[10px] uppercase tracking-[0.3em]">Close // esc</span>
+        </button>
+        
+        <div class="relative max-w-5xl w-full h-full flex items-center justify-center pointer-events-none">
+            <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain border border-white/5 shadow-2xl shadow-ember/5" alt="Expanded View">
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]"></div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script> 
 </body>
