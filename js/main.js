@@ -1,4 +1,203 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+   /* --- COORDINATED ENTRANCE --- */
+    if (typeof gsap !== 'undefined') {
+        const mainTl = gsap.timeline({ 
+            defaults: { ease: "power4.out", duration: 1.2 } 
+        });
+
+        mainTl
+            // 1. Header Entrance
+            .from("header", { y: -100, opacity: 0 })
+            .from("header .font-marker, .nav-links li, #hamburgerBtn", {
+                y: -20, opacity: 0, duration: 0.8, stagger: 0.1
+            }, "-=0.8")
+
+            // 2. Background "PORTFOLIO" text (Fades in deep background)
+            .from(".md\\:text-9xl", { 
+                opacity: 0, 
+                scale: 0.9, 
+                duration: 2 
+            }, "-=0.5")
+
+            // 3. THE BRUSH STROKE (Reveals your name)
+            // Ensure your CSS has .brush-stroke { transform-origin: left; }
+            .from(".brush-stroke", { 
+                scaleX: 0, 
+                duration: 1.2, 
+                ease: "expo.inOut" 
+            }, "-=1.5")
+
+            // 4. Content Stagger (Left side text & buttons)
+            .from("#home .flex-col.items-center.md\\:items-start > *", {
+                y: 40,
+                opacity: 0,
+                stagger: 0.15
+            }, "-=1.0")
+
+            // 5. Tilt Card Entrance
+            .from("#tilt-card", {
+                x: 60,
+                opacity: 0,
+                duration: 1.5
+            }, "-=1.2")
+
+            // 6. Hero Stats Pop-in
+            .from(".hero-stats > div", {
+                y: 20,
+                opacity: 0,
+                stagger: 0.1,
+                ease: "back.out(1.7)"
+            }, "-=0.8");
+
+            /* --- PROJECTS SCROLL ANIMATION --- */
+            if (typeof gsap !== 'undefined') {
+                // Animate Header
+                gsap.from("#projects .mb-12", {
+                    scrollTrigger: {
+                        trigger: "#projects",
+                        start: "top 80%",
+                    },
+                    y: 30,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                });
+
+                // Staggered Cards Entrance
+                gsap.from(".project-tilt-container", {
+                    scrollTrigger: {
+                        trigger: ".grid",
+                        start: "top 85%",
+                    },
+                    y: 50,
+                    opacity: 0,
+                    scale: 0.95,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power4.out"
+                });
+
+                // Suble Background Glow Movement (Parallax)
+                gsap.to(".bg-ember\\/5", {
+                    scrollTrigger: {
+                        trigger: "#projects",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    },
+                    y: -100,
+                    x: 50
+                });
+            }
+
+            /* --- BULLETPROOF ABOUT ANIMATION --- */
+            if (typeof gsap !== 'undefined') {
+                // Register ScrollTrigger if you haven't yet
+                gsap.registerPlugin(ScrollTrigger);
+
+                const aboutTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#about",
+                        start: "top 75%",
+                        // toggleActions: "play none none none" // Ensures it only plays once
+                    }
+                });
+
+                aboutTl
+                    // 1. Header & Bio Text
+                    .from("#about .max-w-7xl.mb-12, #about .space-y-4 p", {
+                        y: 20,
+                        opacity: 0,
+                        stagger: 0.1,
+                        duration: 0.8,
+                        clearProps: "all" // Clears GSAP styles after finishing
+                    })
+                    // 2. The Tech Stack Module Container
+                    .from("#about .relative.group .p-8", {
+                        scale: 0.98,
+                        opacity: 0,
+                        duration: 0.8
+                    }, "-=0.5")
+                    // 3. TARGETING THE SKILLS TEXT SPECIFICALLY
+                    .from(".group\\/chip", {
+                        y: 15,
+                        opacity: 0,
+                        stagger: 0.05,
+                        duration: 0.4,
+                        ease: "power2.out",
+                        clearProps: "opacity" // Force opacity back to original after animation
+                    }, "-=0.4")
+                    // 4. The Skill Level Bars
+                    .from(".w-1.h-3.bg-ember", {
+                        scaleY: 0,
+                        stagger: 0.1,
+                        duration: 0.5,
+                        transformOrigin: "bottom"
+                    }, "-=0.2");
+            }
+
+            /* --- GALLERY ENTRANCE --- */
+            if (typeof gsap !== 'undefined') {
+                gsap.from("#about .grid.h-125 > div", {
+                    scrollTrigger: {
+                        trigger: "#about .grid.h-125",
+                        start: "top 85%", // Starts when the grid is near the bottom of the screen
+                        toggleActions: "play none none none"
+                    },
+                    y: 50,
+                    scale: 0.9,
+                    opacity: 0,
+                    duration: 1.2,
+                    stagger: 0.1, // Creates the "one-by-one" loading feel
+                    ease: "expo.out",
+                    clearProps: "all" // Important: removes GSAP styles after animation so hover effects work
+                });
+            }
+
+            /* --- CONTACT SECTION ANIMATION --- */
+if (typeof gsap !== 'undefined') {
+    const contactTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+        }
+    });
+
+    contactTl
+        // 1. Reveal the "Contact" header with the red lines
+        .from("#contact .flex.items-center.justify-center", {
+            width: 0,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.inOut"
+        })
+        // 2. Main Heading and Paragraph fade & slide up
+        .from("#contact h2, #contact p", {
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5")
+        // 3. The Email Link (scales up slightly)
+        .from("#contact a[href^='mailto']", {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out(1.7)"
+        }, "-=0.4")
+        // 4. Social Icons Staggered Pop-in
+        .from("#contact .group.relative.w-12", {
+            y: 20,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "power2.out",
+            clearProps: "all"
+        }, "-=0.3");
+}
+}
     
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');

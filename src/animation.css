@@ -36,6 +36,7 @@
     50% { opacity: 0; }
 }
 
+
 /* /* 1. Define Keyframes *
 @keyframes slideDown {
     from { transform: translateY(-100%); opacity: 0; }
