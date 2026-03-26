@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="src/animation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body class="bg-void-base text-parchment font-dm overflow-x-hidden cursor-auto">
     <header class="sticky top-0 z-50 bg-(--nav-bg) border-b border-(--border-soft) backdrop-blur-xl px-4 h-15.5 md:px-20">
@@ -132,12 +133,12 @@
 
                 </div>
 
-                <div id="tilt-card" class="relative shrink-0 w-50 sm:w-64 md:w-72 lg:w-75 xl:w-80 order-1 md:order-2 group" style="perspective: 1000px;">
+                <div id="tilt-card" class="relative shrink-0 w-50 sm:w-64 md:w-72 lg:w-75 xl:w-80 order-1 md:order-2 group perspective-[1000px]">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 -rotate-3 w-24 h-6 bg-white/10 rounded-sm z-20 backdrop-blur-sm pointer-events-none transition-opacity group-hover:opacity-30"></div>
 
-                    <div class="photo-frame transition-transform duration-300 ease-out w-full aspect-3/4 border border-white/10 rounded-sm overflow-hidden relative shadow-[10px_10px_0_rgba(173,38,45,0.1)] md:shadow-[20px_20px_0_rgba(173,38,45,0.05)]" style="transform-style: preserve-3d;">
+                    <div class="photo-frame transition-transform duration-300 ease-out w-full aspect-3/4 border border-white/10 rounded-sm overflow-hidden relative shadow-[10px_10px_0_rgba(173,38,45,0.1)] md:shadow-[20px_20px_0_rgba(173,38,45,0.05)] transform-3d">
                         
-                        <div class="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-void/90 border border-white/10 z-30 shadow-md" style="transform: translateZ(50px);">
+                        <div class="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-void/90 border border-white/10 z-30 shadow-md transform-[translateZ(50px)]">
                             <span class="relative flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
